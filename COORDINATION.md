@@ -29,3 +29,9 @@ This session is the **final integration session** (repo was empty except README;
 
 ## Handoff log
 - 2026-11-25: Session claimed all tasks (empty repo, no conflicts). Built site, verified data, opened PR.
+
+## Parallel dashboard work — 43e51ad8
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Spring-aware dashboard supplement | in progress | 43e51ad8 | docs/, scripts/, package.json |
