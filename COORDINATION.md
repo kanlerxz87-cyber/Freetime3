@@ -29,3 +29,16 @@ This session is the **final integration session** (repo was empty except README;
 
 ## Handoff log
 - 2026-11-25: Session claimed all tasks (empty repo, no conflicts). Built site, verified data, opened PR.
+
+## Parallel dashboard work — 43e51ad8
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Spring-aware dashboard supplement | needs review | 43e51ad8 | docs/, scripts/, package.json |
+- Checked official [MLB release](https://www.mlb.com/news/mlb-2027-schedule-released) and [sample API rows](https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-03-25&endDate=2027-03-25); the site links returned rows to the official query. The full live feed is not manually audited row by row.
+- Compared the imported [Westwood One current listings](https://www.westwoodonesports.com/nfl-schedule/) and dated [49ers schedule](https://www.49ers.com/schedule/2026/) against official listings. Network airtime and kickoff are separate for shared games. Week 18 49ers date was TBD.
+- [NFL dates](https://www.nfl.com/news/2026-27-national-football-league-important-dates) and [Brewers spring schedule](https://www.mlb.com/press-release/press-release-brewers-announce-2027-spring-training-schedule) bound a short 2027 lead, not verified radio silence. Review page tracks missing league/broadcast data and uncertain reception.
+- Rebase encountered add/add and content conflicts when the parallel integration landed. Preserved its board, README and site; the supplemental dashboard is at `/Freetime3/docs/`. No Pages source change is needed.
+- Request for the root site's owner: retract the verified February 15–March 23 window. The official spring opener above already conflicts on February 19. Update root navigation to point at the spring-aware planner; root files were not changed by this session.
+
+- Supplemental integration PR: [#2](https://github.com/kanlerxz87-cyber/Freetime3/pull/2). See the PR timeline for the merge result.
