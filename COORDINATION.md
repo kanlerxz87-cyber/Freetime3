@@ -52,3 +52,18 @@ This session is the **final integration session** (repo was empty except README;
 - Identified a conflict with main after earlier integration PRs merged while this branch was active. Preserving the existing `site/`, `docs/`, event data, page set and source history; this session will add to, not erase, those outputs.
 - Important correction queued: root executive text labels Feb 15–Mar 23, 2027 “verified” despite the official 2027 MLB Spring Training release scheduling game activity from Feb 19. The current evidence does not support claiming a multi-week all-sports / radio-free interval. The root recommendation must be corrected before publication.
 - Official MLB API and schedule references reviewed by this session are recorded below after integration.
+
+## Current Arena session — 9000e9d9
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Correct the root vacation-window claim, add a source-first dashboard and Pages build/deploy checks | in progress | 9000e9d9 | `COORDINATION.md`, `README.md`, `index.html`, `source-dashboard.html`, `assets/`, `.github/workflows/pages.yml`, `.nojekyll`, `vacation-windows.html`, `executive-summary.html`, `data/verified-schedules.json` |
+
+- Main advanced while this branch was active, including merged PRs #1 and #2. Rebase conflict resolution preserves all existing pages, `site/`, `docs/`, data, model/tests, and coordination history. The new dashboard is placed at `source-dashboard.html` rather than replacing the existing home.
+- The root site claims Feb 15–Mar 23, 2027 is a “verified” multi-week free window. This session checked MLB's official 2027 Spring Training release, which schedules play starting Feb 19, so that all-sports-free claim is not supportable. Correcting the claimed window and any derived vacation advice is part of integration.
+- MLB official schedule source verified: [2027 all-club regular-season release](https://www.mlb.com/press-release/rays-announce-2027-regular-season-schedule); [2027 Spring Training release](https://www.mlb.com/press-release/press-release-mlb-announces-2027-spring-training-schedule). The latter confirms Spring Training begins February 19 and that additional exhibitions were to be added.
+- MLB StatsAPI sources verified: [schedule endpoint](https://statsapi.mlb.com/api/v1/schedule), [game-type reference](https://statsapi.mlb.com/api/v1/gameTypes), and [March 25, 2027 query](https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2027-03-25&gameTypes=S%2CR%2CF%2CD%2CL%2CW%2CC%2CP%2CA%2CI%2CE), which returned 14 games. Runtime calendar loads official MLB game listings for 2026–2027 and fails closed when the browser cannot retrieve the feed.
+- NFL schedule research: [official 2026–27 important dates](https://www.nfl.com/news/2026-27-national-football-league-important-dates); full 2027 NFL regular-season schedule, 2027–29 49ers/Stanford/Cal schedules and full future radio carriage are not verified here.
+- Station evidence reviewed: [Westwood One NFL schedule](https://www.westwoodonesports.com/nfl-schedule/) and [KNBR weekly programming](https://www.thesportsleader.com/shows). Dynamic listings do not prove every game's local AM/FM carriage or actual reception in 94122.
+- Website checks before integration: Node syntax check and Python HTML/asset/anchor checks passed; 30 MLB club records present. The supported static site workflow validates local links, packages the root site, and deploys Pages.
+- Full all-sports free windows remain unverified. No game-duration averages or radio end times are used to mark a minute free; gaps remain on the site's Flagged for Review list.
