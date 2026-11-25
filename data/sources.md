@@ -7,6 +7,7 @@ See the live site page: `docs/sources.html` and machine-readable `docs/data/sche
 | ID | Title | Publisher | URL | Accessed | Notes |
 |---|---|---|---|---|---|
 | mlb_2027_release | MLB releases 2027 regular-season schedule | MLB.com | https://www.mlb.com/news/mlb-2027-schedule-released | 2026-11-25 | Verified 2027 key dates: Opening Night Mar 24, Traditional Opening Day Mar 25, first full slate Mar 27, ASG Jul 13, HR Derby Jul 12, second half Jul 15, regular season ends Sep 26. |
+| mlb_2027_spring_training | MLB announces 2027 Spring Training schedule | MLB.com | https://www.mlb.com/press-release/press-release-mlb-announces-2027-spring-training-schedule | 2026-11-25 | Verified Spring Training begins Feb 19, 2027; all 30 clubs in action. Preseason counts as busy per user rule. |
 | mlb_schedule_2027 | MLB Schedule 2027 hub | MLB.com | https://www.mlb.com/schedule/2027-03-23 | 2026-11-25 | Official schedule hub reference. |
 | mlb_schedule_2026 | MLB Schedule hub | MLB.com | https://www.mlb.com/schedule | 2026-11-25 | Official schedule hub; baseline for estimates. |
 | nfl_important_dates_2026_27 | 2026-27 National Football League important dates | NFL.com | https://www.nfl.com/news/2026-27-national-football-league-important-dates | 2026-11-25 | Verified 2026-27 key dates including Super Bowl LXI Feb 14 2027. |

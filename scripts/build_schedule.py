@@ -24,6 +24,13 @@ SOURCES = {
         "accessed": "2026-11-25",
         "type": "official",
     },
+    "mlb_2027_spring_training": {
+        "title": "MLB announces 2027 Spring Training schedule",
+        "url": "https://www.mlb.com/press-release/press-release-mlb-announces-2027-spring-training-schedule",
+        "publisher": "MLB.com",
+        "accessed": "2026-11-25",
+        "type": "official",
+    },
     "mlb_schedule_2027": {
         "title": "MLB Schedule - 2027 (official schedule hub)",
         "url": "https://www.mlb.com/schedule/2027-03-23",
@@ -293,6 +300,16 @@ SEASON_WINDOWS = [
         "note": "Postseason window is estimated; actual games depend on teams/series. Treat as potential busy period until confirmed.",
         "source_ids": ["mlb_postseason_format"],
     },
+    # 2027 MLB Spring Training - verified start
+    {
+        "id": "mlb_2027_spring",
+        "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+        "start": "2027-02-19", "end": "2027-03-23",
+        "category": "MLB", "priority": "high",
+        "status": "verified-window",
+        "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified.",
+        "source_ids": ["mlb_2027_spring_training"],
+    },
     # 2027 MLB - verified key dates from MLB.com release
     {
         "id": "mlb_2027_regular",
@@ -312,6 +329,16 @@ SEASON_WINDOWS = [
         "note": "Postseason dates not officially released. Estimated based on typical MLB postseason calendar following regular season end Sep 26, 2027. Treat as potential busy period.",
         "source_ids": ["mlb_2027_release", "mlb_postseason_format"],
     },
+    # 2028 MLB Spring Training - estimated
+    {
+        "id": "mlb_2028_spring",
+        "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+        "start": "2028-02-18", "end": "2028-03-29",
+        "category": "MLB", "priority": "high",
+        "status": "estimated-window",
+        "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason.",
+        "source_ids": ["mlb_schedule_2026"],
+    },
     # 2028 MLB - no official schedule
     {
         "id": "mlb_2028_regular",
@@ -330,6 +357,16 @@ SEASON_WINDOWS = [
         "status": "estimated-window",
         "note": "ESTIMATE ONLY - postseason dates not released. Estimated window.",
         "source_ids": ["mlb_postseason_format"],
+    },
+    # 2029 MLB Spring Training - estimated
+    {
+        "id": "mlb_2029_spring",
+        "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+        "start": "2029-02-16", "end": "2029-03-28",
+        "category": "MLB", "priority": "high",
+        "status": "estimated-window",
+        "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason.",
+        "source_ids": ["mlb_schedule_2026"],
     },
     # 2029 MLB
     {

@@ -13,6 +13,13 @@ window.SCHEDULE_DATA = {
       "accessed": "2026-11-25",
       "type": "official"
     },
+    "mlb_2027_spring_training": {
+      "title": "MLB announces 2027 Spring Training schedule",
+      "url": "https://www.mlb.com/press-release/press-release-mlb-announces-2027-spring-training-schedule",
+      "publisher": "MLB.com",
+      "accessed": "2026-11-25",
+      "type": "official"
+    },
     "mlb_schedule_2027": {
       "title": "MLB Schedule - 2027 (official schedule hub)",
       "url": "https://www.mlb.com/schedule/2027-03-23",
@@ -143,6 +150,19 @@ window.SCHEDULE_DATA = {
       ]
     },
     {
+      "id": "mlb_2027_spring",
+      "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+      "start": "2027-02-19",
+      "end": "2027-03-23",
+      "category": "MLB",
+      "priority": "high",
+      "status": "verified-window",
+      "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified.",
+      "source_ids": [
+        "mlb_2027_spring_training"
+      ]
+    },
+    {
       "id": "mlb_2027_regular",
       "label": "MLB 2027 Regular Season (all 30 teams)",
       "start": "2027-03-24",
@@ -171,6 +191,19 @@ window.SCHEDULE_DATA = {
       ]
     },
     {
+      "id": "mlb_2028_spring",
+      "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+      "start": "2028-02-18",
+      "end": "2028-03-29",
+      "category": "MLB",
+      "priority": "high",
+      "status": "estimated-window",
+      "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason.",
+      "source_ids": [
+        "mlb_schedule_2026"
+      ]
+    },
+    {
       "id": "mlb_2028_regular",
       "label": "MLB 2028 Regular Season (all 30 teams) - ESTIMATED",
       "start": "2028-03-30",
@@ -194,6 +227,19 @@ window.SCHEDULE_DATA = {
       "note": "ESTIMATE ONLY - postseason dates not released. Estimated window.",
       "source_ids": [
         "mlb_postseason_format"
+      ]
+    },
+    {
+      "id": "mlb_2029_spring",
+      "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+      "start": "2029-02-16",
+      "end": "2029-03-28",
+      "category": "MLB",
+      "priority": "high",
+      "status": "estimated-window",
+      "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason.",
+      "source_ids": [
+        "mlb_schedule_2026"
       ]
     },
     {
@@ -4220,234 +4266,630 @@ window.SCHEDULE_DATA = {
     },
     "2027-02-19": {
       "date": "2027-02-19",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-02-20": {
       "date": "2027-02-20",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-02-21": {
       "date": "2027-02-21",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-02-22": {
       "date": "2027-02-22",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-02-23": {
       "date": "2027-02-23",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-02-24": {
       "date": "2027-02-24",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-02-25": {
       "date": "2027-02-25",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-02-26": {
       "date": "2027-02-26",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-02-27": {
       "date": "2027-02-27",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-02-28": {
       "date": "2027-02-28",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-01": {
       "date": "2027-03-01",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-02": {
       "date": "2027-03-02",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-03": {
       "date": "2027-03-03",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-04": {
       "date": "2027-03-04",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-05": {
       "date": "2027-03-05",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-06": {
       "date": "2027-03-06",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-07": {
       "date": "2027-03-07",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-08": {
       "date": "2027-03-08",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-09": {
       "date": "2027-03-09",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-10": {
       "date": "2027-03-10",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-11": {
       "date": "2027-03-11",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-12": {
       "date": "2027-03-12",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-13": {
       "date": "2027-03-13",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-14": {
       "date": "2027-03-14",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-15": {
       "date": "2027-03-15",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-16": {
       "date": "2027-03-16",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-17": {
       "date": "2027-03-17",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-18": {
       "date": "2027-03-18",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-19": {
       "date": "2027-03-19",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-20": {
       "date": "2027-03-20",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-21": {
       "date": "2027-03-21",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-22": {
       "date": "2027-03-22",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-23": {
       "date": "2027-03-23",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2027 Spring Training (all 30 clubs) - preseason",
+          "category": "MLB",
+          "priority": "high",
+          "status": "verified-window",
+          "window_id": "mlb_2027_spring",
+          "source_ids": [
+            "mlb_2027_spring_training"
+          ],
+          "note": "MLB announced 2027 Spring Training begins Friday, Feb 19, 2027 with all 30 clubs in action across Cactus and Grapefruit Leagues. Exhibition games also scheduled Mar 20-23. User rule includes MLB preseason; treat this window as busy. Game-level radio carriage not fully verified."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-verified"
     },
     "2027-03-24": {
       "date": "2027-03-24",
@@ -12694,290 +13136,782 @@ window.SCHEDULE_DATA = {
     },
     "2028-02-18": {
       "date": "2028-02-18",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-02-19": {
       "date": "2028-02-19",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-02-20": {
       "date": "2028-02-20",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-02-21": {
       "date": "2028-02-21",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-02-22": {
       "date": "2028-02-22",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-02-23": {
       "date": "2028-02-23",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-02-24": {
       "date": "2028-02-24",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-02-25": {
       "date": "2028-02-25",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-02-26": {
       "date": "2028-02-26",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-02-27": {
       "date": "2028-02-27",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-02-28": {
       "date": "2028-02-28",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-02-29": {
       "date": "2028-02-29",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-01": {
       "date": "2028-03-01",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-02": {
       "date": "2028-03-02",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-03": {
       "date": "2028-03-03",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-04": {
       "date": "2028-03-04",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-05": {
       "date": "2028-03-05",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-06": {
       "date": "2028-03-06",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-07": {
       "date": "2028-03-07",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-08": {
       "date": "2028-03-08",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-09": {
       "date": "2028-03-09",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-10": {
       "date": "2028-03-10",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-11": {
       "date": "2028-03-11",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-12": {
       "date": "2028-03-12",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-13": {
       "date": "2028-03-13",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-14": {
       "date": "2028-03-14",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-15": {
       "date": "2028-03-15",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-16": {
       "date": "2028-03-16",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-17": {
       "date": "2028-03-17",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-18": {
       "date": "2028-03-18",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-19": {
       "date": "2028-03-19",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-20": {
       "date": "2028-03-20",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-21": {
       "date": "2028-03-21",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-22": {
       "date": "2028-03-22",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-23": {
       "date": "2028-03-23",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-24": {
       "date": "2028-03-24",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-25": {
       "date": "2028-03-25",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-26": {
       "date": "2028-03-26",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-27": {
       "date": "2028-03-27",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-28": {
       "date": "2028-03-28",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-29": {
       "date": "2028-03-29",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2028 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2028_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2028 Spring Training schedule not released. Estimated from typical mid/late-Feb start through day before regular season. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2028-03-30": {
       "date": "2028-03-30",
@@ -20886,290 +21820,782 @@ window.SCHEDULE_DATA = {
     },
     "2029-02-16": {
       "date": "2029-02-16",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-02-17": {
       "date": "2029-02-17",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-02-18": {
       "date": "2029-02-18",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-02-19": {
       "date": "2029-02-19",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-02-20": {
       "date": "2029-02-20",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-02-21": {
       "date": "2029-02-21",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-02-22": {
       "date": "2029-02-22",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-02-23": {
       "date": "2029-02-23",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-02-24": {
       "date": "2029-02-24",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-02-25": {
       "date": "2029-02-25",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-02-26": {
       "date": "2029-02-26",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-02-27": {
       "date": "2029-02-27",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-02-28": {
       "date": "2029-02-28",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-01": {
       "date": "2029-03-01",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-02": {
       "date": "2029-03-02",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-03": {
       "date": "2029-03-03",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-04": {
       "date": "2029-03-04",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-05": {
       "date": "2029-03-05",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-06": {
       "date": "2029-03-06",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-07": {
       "date": "2029-03-07",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-08": {
       "date": "2029-03-08",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-09": {
       "date": "2029-03-09",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-10": {
       "date": "2029-03-10",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-11": {
       "date": "2029-03-11",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-12": {
       "date": "2029-03-12",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-13": {
       "date": "2029-03-13",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-14": {
       "date": "2029-03-14",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-15": {
       "date": "2029-03-15",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-16": {
       "date": "2029-03-16",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-17": {
       "date": "2029-03-17",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-18": {
       "date": "2029-03-18",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-19": {
       "date": "2029-03-19",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-20": {
       "date": "2029-03-20",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-21": {
       "date": "2029-03-21",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-22": {
       "date": "2029-03-22",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-23": {
       "date": "2029-03-23",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-24": {
       "date": "2029-03-24",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-25": {
       "date": "2029-03-25",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-26": {
       "date": "2029-03-26",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-27": {
       "date": "2029-03-27",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-28": {
       "date": "2029-03-28",
-      "busy": false,
-      "reasons": [],
+      "busy": true,
+      "reasons": [
+        {
+          "label": "MLB 2029 Spring Training (all 30 clubs) - ESTIMATED",
+          "category": "MLB",
+          "priority": "high",
+          "status": "estimated-window",
+          "window_id": "mlb_2029_spring",
+          "source_ids": [
+            "mlb_schedule_2026"
+          ],
+          "note": "ESTIMATE ONLY - 2029 Spring Training schedule not released. Estimated from typical pattern. User rule includes MLB preseason."
+        }
+      ],
       "events": [],
-      "status": "free"
+      "status": "busy-estimated"
     },
     "2029-03-29": {
       "date": "2029-03-29",
@@ -28325,26 +29751,8 @@ window.SCHEDULE_DATA = {
     }
   },
   "vacation_windows": {
-    "2027": [
-      {
-        "start": "2027-02-15",
-        "end": "2027-03-23",
-        "days": 37
-      }
-    ],
-    "2028": [
-      {
-        "start": "2028-02-14",
-        "end": "2028-03-29",
-        "days": 45
-      }
-    ],
-    "2029": [
-      {
-        "start": "2029-02-12",
-        "end": "2029-03-28",
-        "days": 45
-      }
-    ]
+    "2027": [],
+    "2028": [],
+    "2029": []
   }
 };

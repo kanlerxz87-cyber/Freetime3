@@ -1,29 +1,28 @@
-# Free Time Vacation
+# Free Time Vacation — Bay Area Sports Radio Planner
 
-A static planning dashboard for finding vacation windows in the San Francisco Bay Area (Outer Sunset 94122, AM/FM radio context) that avoid live sports you want to hear on the radio.
+A source-first planning dashboard for finding vacation windows in the San Francisco Bay Area (Outer Sunset 94122, AM/FM radio context) that avoid live sports you want to hear on the radio.
 
-## Tracked categories (high-priority rules)
+## Executive summary
+
+**No modeled 7+ day contiguous vacation window with zero tracked conflicts was found for 2027, 2028, or 2029** under the current conservative model. 
+
+Why: the tracked categories cover most of the year. NFL season/postseason runs roughly Sep-Feb, MLB spring training + regular season + postseason runs roughly mid-Feb through early Nov, and Stanford/Cal NCAAF runs late Aug-late Nov. When these estimated season windows are treated as busy (because game-by-game 2027-2029 schedules are largely unreleased), no 7+ day gap remains. **This is a modeled planning result, not a certified "no vacation possible" fact.** Actual off-days, bye weeks, and unbroadcast windows may exist; verify official schedules as they are released.
+
+### Important correction
+An earlier draft window (2027-02-15 to 2027-03-23) was **invalid** because [MLB announced 2027 Spring Training begins Feb 19, 2027](https://www.mlb.com/press-release/press-release-mlb-announces-2027-spring-training-schedule) and the user rule includes MLB preseason. The model and site have been corrected to include MLB Spring Training windows.
+
+## Tracked "busy" categories
 
 A minute is **free** when none of these are on air:
 
-- **MLB** — San Francisco Giants and Athletics flagged high priority; **all 30 MLB clubs shown** (regular season, postseason, All-Star/special games as applicable).
+- **MLB** — San Francisco Giants and Athletics flagged high priority; **all 30 MLB clubs shown** (preseason/spring training, regular season, postseason, All-Star/special games as applicable).
 - **NFL — San Francisco 49ers** (preseason, regular season, postseason) — **high priority**.
 - **NCAAF — Stanford Cardinal and California Golden Bears** — **high priority**.
 - **Westwood One Sports national NFL radio broadcasts** (TNF/SNF/MNF/Thanksgiving/holiday packages/postseason as carried).
 
-## Best vacation windows (modeled, verify before booking)
-
-Based on verified anchors + estimated season windows (generated 2026-11-25):
-
-| Year | Best modeled window | Days | Confidence note |
-|------|---------------------|------|-----------------|
-| 2027 | 2027-02-15 to 2027-03-23 | 37 | Super Bowl LXI is 2027-02-14 (NFL verified). MLB 2027 Opening Night is 2027-03-24 (MLB verified). Boundaries should still be rechecked for 49ers preseason/NCAAF/broadcast changes. |
-| 2028 | 2028-02-14 to 2028-03-29 | 45 | Super Bowl LXII is 2028-02-13 (reported NFL announcement). MLB 2028 window is **estimated** (no official schedule). |
-| 2029 | 2029-02-12 to 2029-03-28 | 45 | **Estimated** - 2028-29 NFL postseason and 2029 MLB/NCAAF schedules not officially released. |
-
 ## Site
 
-The GitHub Pages site lives in [`docs/`](docs/index.html):
+The GitHub Pages dashboard lives in [`docs/`](docs/index.html):
 
 - [Dashboard / Executive Summary](docs/index.html)
 - [Calendar / Scoreboard](docs/calendar.html)
@@ -31,15 +30,18 @@ The GitHub Pages site lives in [`docs/`](docs/index.html):
 - [Sources & Verification](docs/sources.html)
 - [Flagged for Review](docs/flagged.html)
 
+Legacy/supplemental pages retained from prior integration work are also in the repo (`site/`, `source-dashboard.html`, etc.) and should be read with the same caution: missing data is not free.
+
 ## Data honesty
 
 - **Verified** = backed by an official/primary source URL recorded in `docs/data/schedule-data.js`.
-- **Estimated** = modeled from typical season patterns because official game-level schedules are unreleased. These are clearly labeled and listed on the Flagged for Review page.
+- **Estimated** = modeled from typical season patterns because official game-level schedules are unreleased. Clearly labeled and listed on Flagged for Review.
 - **No hallucinated values.** Missing/unknown times are left TBA/blank and flagged.
 
 ## Key official sources
 
 - MLB 2027 schedule release: https://www.mlb.com/news/mlb-2027-schedule-released
+- MLB 2027 Spring Training announcement: https://www.mlb.com/press-release/press-release-mlb-announces-2027-spring-training-schedule
 - MLB schedule hub: https://www.mlb.com/schedule
 - NFL 2026-27 important dates: https://www.nfl.com/news/2026-27-national-football-league-important-dates
 - NFL schedules: https://www.nfl.com/schedules/
