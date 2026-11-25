@@ -22,6 +22,10 @@ A minute is **free** when none of these are on air:
 
 ## Site
 
+## Supplementary verified 2026 data (session 8ce435e1)
+
+Additional verified 2026 rows were added in `site/assets/data.js` (49ers, Stanford, Cal, Westwood One NFL national broadcasts) with official source links in `data/sources.json` and verification notes in `docs/verification.md`. Supplementary calendar/sources pages: `site/calendar.html`, `site/sources.html`. Unverified/incomplete items remain flagged; no per-game rows were fabricated.
+
 The GitHub Pages dashboard lives in [`docs/`](docs/index.html):
 
 - [Dashboard / Executive Summary](docs/index.html)
