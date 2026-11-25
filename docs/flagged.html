@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flagged for Review - Free Time Vacation</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">Free Time Vacation <span>SF Bay Area Sports Radio Planner</span></div>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="calendar.html">Calendar / Scoreboard</a>
+        <a href="games.html">Games &amp; Schedule</a>
+        <a href="sources.html">Sources &amp; Verification</a>
+        <a href="flagged.html" class="active">Flagged for Review</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="section">
+      <h2>Flagged for Review</h2>
+      <p class="lead">Items below are intentionally published for review. They do <strong>not</strong> block the site, but they must be resolved or reverified before treating affected dates as confirmed travel-safe windows.</p>
+      <div class="callout warn"><strong>Rule:</strong> If a value can't be confirmed from an official source, it is left blank/TBA or marked <span class="badge estimated">Estimated</span>. No values were invented.</div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Severity</th><th>Item</th><th>Why flagged</th><th>Current handling</th><th>Source / verification link</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>F-001</td>
+              <td><span class="badge estimated">High</span></td>
+              <td>MLB 2028 regular season / postseason game-level schedule</td>
+              <td>Official 2028 MLB game-by-game schedule not released at generation time.</td>
+              <td>Modeled as estimated season window (2028-03-30 to 2028-10-01 regular; 2028-10-03 to 2028-11-05 postseason). All days in window treated as potential busy/estimated.</td>
+              <td><a href="https://www.mlb.com/schedule" target="_blank" rel="noopener">MLB.com Schedule (official hub)</a></td>
+            </tr>
+            <tr>
+              <td>F-002</td>
+              <td><span class="badge estimated">High</span></td>
+              <td>MLB 2029 regular season / postseason game-level schedule</td>
+              <td>Official 2029 MLB game-by-game schedule not released.</td>
+              <td>Modeled as estimated season window (2029-03-29 to 2029-09-30 regular; 2029-10-02 to 2029-11-04 postseason).</td>
+              <td><a href="https://www.mlb.com/schedule" target="_blank" rel="noopener">MLB.com Schedule (official hub)</a></td>
+            </tr>
+            <tr>
+              <td>F-003</td>
+              <td><span class="badge estimated">High</span></td>
+              <td>MLB 2027 postseason dates / game-by-game times</td>
+              <td>MLB 2027 regular season key dates are verified by MLB.com release, but full postseason dates and many game times are not fully released.</td>
+              <td>Regular season end date verified (Sep 26, 2027). Postseason window estimated (Sep 28 - Nov 1, 2027). Game times within season treated as season-window busy unless specific verified event exists.</td>
+              <td><a href="https://www.mlb.com/news/mlb-2027-schedule-released" target="_blank" rel="noopener">MLB.com 2027 schedule release</a></td>
+            </tr>
+            <tr>
+              <td>F-004</td>
+              <td><span class="badge estimated">High</span></td>
+              <td>NFL 2027 regular season / postseason game-level schedule (2027-28 season)</td>
+              <td>Official 2027 NFL week-by-week schedule not released. Super Bowl LXII date is confirmed by NFL announcement reporting, but kickoff/week dates are not fully published as an official schedule table.</td>
+              <td>Estimated regular season window 2027-09-09 to 2028-01-09 (Thu after Labor Day pattern). Postseason estimated 2028-01-15 to 2028-02-13 with Super Bowl LXII anchor Feb 13, 2028.</td>
+              <td><a href="https://operations.nfl.com/gameday/nfl-schedule/creating-the-nfl-schedule/" target="_blank" rel="noopener">NFL Operations schedule</a><br><a href="https://www.atlantanewsfirst.com/2026/07/24/nfl-sets-date-super-bowl-lxii-mercedes-benz-stadium-atlanta/" target="_blank" rel="noopener">Super Bowl LXII date report</a></td>
+            </tr>
+            <tr>
+              <td>F-005</td>
+              <td><span class="badge estimated">High</span></td>
+              <td>NFL 2028 and 2029 season schedules</td>
+              <td>Official schedules not released.</td>
+              <td>Estimated season windows using Labor Day / 18-week / postseason patterns. Clearly labeled ESTIMATED.</td>
+              <td><a href="https://operations.nfl.com/gameday/nfl-schedule/creating-the-nfl-schedule/" target="_blank" rel="noopener">NFL Operations schedule</a></td>
+            </tr>
+            <tr>
+              <td>F-006</td>
+              <td><span class="badge estimated">High</span></td>
+              <td>San Francisco 49ers 2027-2029 preseason/regular/postseason game dates</td>
+              <td>Official 49ers schedules for 2027-2029 not released.</td>
+              <td>Covered by estimated NFL season windows; no specific 49ers game dates invented. Reverify on 49ers.com/NFL.com when released.</td>
+              <td><a href="https://www.49ers.com/schedule/" target="_blank" rel="noopener">49ers.com Schedule</a><br><a href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">NFL.com Schedules</a></td>
+            </tr>
+            <tr>
+              <td>F-007</td>
+              <td><span class="badge estimated">High</span></td>
+              <td>Stanford &amp; California NCAAF 2027-2029 schedules</td>
+              <td>Official athletic schedules not released for 2027-2029.</td>
+              <td>Estimated regular-season windows (late Aug - late Nov). No game-by-game dates/times invented.</td>
+              <td><a href="https://gostanford.com/sports/football/schedule" target="_blank" rel="noopener">GoStanford.com</a><br><a href="https://calbears.com/sports/football/schedule" target="_blank" rel="noopener">CalBears.com</a></td>
+            </tr>
+            <tr>
+              <td>F-008</td>
+              <td><span class="badge estimated">Medium</span></td>
+              <td>Westwood One SF Bay Area AM/FM affiliate verification for 94122</td>
+              <td>User asked to check local AM/FM radio availability in SF Outer Sunset 94122. This run did not complete a fully verified station-by-station affiliate lookup against the Westwood One Station Finder with documented local reception confirmation.</td>
+              <td>Site includes Westwood One national NFL broadcast scope as a tracked category. Local affiliate reception is flagged unverified; user should confirm via Westwood One Station Finder and local AM/FM reception.</td>
+              <td><a href="https://www.westwoodonesports.com/station-finder" target="_blank" rel="noopener">Westwood One Station Finder</a><br><a href="https://www.westwoodonesports.com/nfl-schedule/" target="_blank" rel="noopener">Westwood One NFL Schedule</a></td>
+            </tr>
+            <tr>
+              <td>F-009</td>
+              <td><span class="badge estimated">Medium</span></td>
+              <td>Super Bowl LXII source is secondary reporting of NFL announcement</td>
+              <td>The Feb 13, 2028 Super Bowl LXII date was confirmed via reputable news reports citing NFL announcement; a direct NFL.com page with the same explicit date was not captured as the primary URL in this run.</td>
+              <td>Treated as verified reported NFL announcement, but flagged for manual confirmation against NFL.com/official NFL communications.</td>
+              <td><a href="https://www.atlantanewsfirst.com/2026/07/24/nfl-sets-date-super-bowl-lxii-mercedes-benz-stadium-atlanta/" target="_blank" rel="noopener">Atlanta News First report</a><br><a href="https://www.nfl.com/news/" target="_blank" rel="noopener">NFL.com News (manual check)</a></td>
+            </tr>
+            <tr>
+              <td>F-010</td>
+              <td><span class="badge estimated">Medium</span></td>
+              <td>Average game duration assumptions</td>
+              <td>Actual game lengths vary. Durations are planning estimates, not official schedule facts.</td>
+              <td>MLB ~165 min, NFL ~195 min, NCAAF ~210 min. Labeled as estimated in UI/data.</td>
+              <td><a href="https://www.mlb.com/" target="_blank" rel="noopener">MLB.com (official schedules/times)</a><br><a href="https://www.nfl.com/" target="_blank" rel="noopener">NFL.com</a></td>
+            </tr>
+            <tr>
+              <td>F-011</td>
+              <td><span class="badge estimated">Medium</span></td>
+              <td>Some 2026 Stanford/Cal game times TBA</td>
+              <td>Official schedules list some games as TBA.</td>
+              <td>Time left blank/TBA; date retained as verified from official schedule.</td>
+              <td><a href="https://gostanford.com/sports/football/schedule" target="_blank" rel="noopener">GoStanford.com</a><br><a href="https://calbears.com/sports/football/schedule" target="_blank" rel="noopener">CalBears.com</a></td>
+            </tr>
+            <tr>
+              <td>F-012</td>
+              <td><span class="badge estimated">Low</span></td>
+              <td>MLB 2027 MLB.com release page fetch anomaly during build</td>
+              <td>During automated fetch, the MLB.com 2027 schedule release URL returned unexpected/mangled page content in the extraction tool; however, the MLB.com search snippet and multiple corroborating official/team releases confirm the key dates.</td>
+              <td>Key 2027 MLB dates are included based on MLB.com release headline/snippet and corroboration. Manual browser verification recommended.</td>
+              <td><a href="https://www.mlb.com/news/mlb-2027-schedule-released" target="_blank" rel="noopener">MLB.com release URL</a><br><a href="https://www.mlb.com/schedule/2027-03-23" target="_blank" rel="noopener">MLB 2027 schedule hub</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer>Flagged items are published for transparency and do not block deployment.</footer>
+</body>
+</html>

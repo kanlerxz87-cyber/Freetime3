@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Time Vacation Planner - SF Bay Area Sports Radio</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">Free Time Vacation <span>SF Bay Area Sports Radio Planner</span></div>
+      <nav>
+        <a href="index.html" class="active">Dashboard</a>
+        <a href="calendar.html">Calendar / Scoreboard</a>
+        <a href="games.html">Games &amp; Schedule</a>
+        <a href="sources.html">Sources &amp; Verification</a>
+        <a href="flagged.html">Flagged for Review</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>When can you take a vacation without missing live sports on the radio?</h1>
+      <p>This dashboard tracks free time for the San Francisco Bay Area (Outer Sunset, 94122, AM/FM radio context) around the sports you prioritized: MLB (all 30 teams, Giants/A's high priority), San Francisco 49ers (preseason/regular/postseason), Stanford &amp; California NCAAF, and Westwood One Sports national NFL radio broadcasts. It focuses on finding the best vacation windows in 2027, 2028, and 2029.</p>
+    </section>
+
+    <div class="callout warn">
+      <strong>Important data-honesty notice:</strong> Game-by-game schedules for 2027-2029 are largely <strong>not officially released</strong>. This site uses verified official sources where available (e.g., MLB 2027 schedule release, NFL 2026-27 important dates, Westwood One NFL schedule, Stanford/Cal 2026 schedules) and clearly labels season-window estimates. <strong>Do not book travel on estimated windows without rechecking official schedules when released.</strong>
+    </div>
+
+    <section class="section">
+      <h2>Executive Summary</h2>
+      <div class="grid stats" id="summary-stats"></div>
+      <div class="card">
+        <h3>What "free" means</h3>
+        <p>A minute is <span class="badge free">FREE</span> when <strong>none</strong> of these are on air:</p>
+        <ul>
+          <li><strong>MLB</strong> — San Francisco Giants and Oakland/Sacramento Athletics flagged high priority; <strong>all 30 MLB clubs shown</strong> (regular season, postseason, All-Star/special MLB games as applicable).</li>
+          <li><strong>NFL — San Francisco 49ers</strong>, preseason, regular season, and postseason (<strong>high priority</strong>).</li>
+          <li><strong>NCAAF — Stanford Cardinal and California Golden Bears</strong> (<strong>high priority</strong>).</li>
+          <li><strong>Westwood One Sports national NFL radio broadcasts</strong> (Thursday Night Football, Sunday Night Football, Monday Night Football, Thanksgiving, holiday/weekend packages, postseason as carried).</li>
+        </ul>
+        <p class="note">Time zone: <strong>America/Los_Angeles (PST/PDT)</strong>. Average duration assumptions (estimated, for planning): MLB ~165 min, NFL ~195 min, NCAAF ~210 min. Actual game lengths vary.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Best Vacation Windows (2027, 2028, 2029)</h2>
+      <p class="lead">Contiguous windows with <strong>no tracked MLB/NFL 49ers/Stanford/Cal/Westwood One NFL radio conflicts</strong> based on current verified data and estimated season windows. Longer windows are listed first.</p>
+      <div id="vacation-windows"></div>
+    </section>
+
+    <section class="section">
+      <h2>Key Verified Dates / Anchors</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Date / Window</th><th>Item</th><th>Status</th><th>Why it matters</th><th>Source</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2027-03-24</td>
+              <td>MLB 2027 Opening Night (Netflix, matchup TBD)</td>
+              <td><span class="badge verified">Verified</span></td>
+              <td>Marks start of MLB 2027 season window; MLB games create busy days.</td>
+              <td><a href="https://www.mlb.com/news/mlb-2027-schedule-released" target="_blank" rel="noopener">MLB.com</a></td>
+            </tr>
+            <tr>
+              <td>2027-03-25</td>
+              <td>MLB 2027 Traditional Opening Day (14 games)</td>
+              <td><span class="badge verified">Verified</span></td>
+              <td>All but two teams play; broad MLB coverage.</td>
+              <td><a href="https://www.mlb.com/news/mlb-2027-schedule-released" target="_blank" rel="noopener">MLB.com</a></td>
+            </tr>
+            <tr>
+              <td>2027-09-26</td>
+              <td>MLB 2027 Regular Season final day</td>
+              <td><span class="badge verified">Verified</span></td>
+              <td>End of regular-season MLB window (postseason may follow).</td>
+              <td><a href="https://www.mlb.com/news/mlb-2027-schedule-released" target="_blank" rel="noopener">MLB.com</a></td>
+            </tr>
+            <tr>
+              <td>2027-02-14</td>
+              <td>Super Bowl LXI (end of 2026 NFL season)</td>
+              <td><span class="badge verified">Verified</span></td>
+              <td>Major NFL endpoint before offseason; useful for 2027 vacation planning.</td>
+              <td><a href="https://www.nfl.com/news/2026-27-national-football-league-important-dates" target="_blank" rel="noopener">NFL.com</a></td>
+            </tr>
+            <tr>
+              <td>2028-02-13</td>
+              <td>Super Bowl LXII (Atlanta, Mercedes-Benz Stadium)</td>
+              <td><span class="badge verified">Verified (reported NFL announcement)</span></td>
+              <td>Confirms 2027 NFL season extends into Feb 13, 2028.</td>
+              <td><a href="https://www.atlantanewsfirst.com/2026/07/24/nfl-sets-date-super-bowl-lxii-mercedes-benz-stadium-atlanta/" target="_blank" rel="noopener">Atlanta News First</a></td>
+            </tr>
+            <tr>
+              <td>2026 season</td>
+              <td>Westwood One NFL national radio schedule (remaining 2026 season games listed)</td>
+              <td><span class="badge verified">Verified</span></td>
+              <td>Confirms which national NFL radio windows are carried by Westwood One; includes 49ers TNF/SNF appearances listed.</td>
+              <td><a href="https://www.westwoodonesports.com/nfl-schedule/" target="_blank" rel="noopener">Westwood One Sports</a></td>
+            </tr>
+            <tr>
+              <td>2026 season</td>
+              <td>Stanford Football 2026 schedule</td>
+              <td><span class="badge verified">Verified</span></td>
+              <td>Official Stanford game dates/times/results status used for calendar.</td>
+              <td><a href="https://gostanford.com/sports/football/schedule" target="_blank" rel="noopener">GoStanford.com</a></td>
+            </tr>
+            <tr>
+              <td>2026 season</td>
+              <td>California Football 2026 schedule</td>
+              <td><span class="badge verified">Verified</span></td>
+              <td>Official Cal game dates/times/results status used for calendar.</td>
+              <td><a href="https://calbears.com/sports/football/schedule" target="_blank" rel="noopener">CalBears.com</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>How to use this site</h2>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px,1fr));">
+        <div class="card"><h3>Calendar / Scoreboard</h3><p>Navigate day by day and month by month. Each day is marked free, busy (verified), busy (estimated), or mixed. Click a day for details.</p><p><a href="calendar.html">Open calendar →</a></p></div>
+        <div class="card"><h3>Games &amp; Schedule</h3><p>Filterable table of tracked games/windows, priorities, status, and source links.</p><p><a href="games.html">Open games table →</a></p></div>
+        <div class="card"><h3>Sources &amp; Verification</h3><p>Every source used, with access date and verification notes. Unverified items are flagged, not guessed.</p><p><a href="sources.html">Open sources →</a></p></div>
+        <div class="card"><h3>Flagged for Review</h3><p>Irregularities, unreleased schedules, estimates, and items needing manual confirmation.</p><p><a href="flagged.html">Open flagged items →</a></p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Generated for planning purposes. Verify all travel decisions against official league/team/broadcaster schedules. &middot; Time zone: America/Los_Angeles.
+  </footer>
+
+  <script src="data/schedule-data.js"></script>
+  <script>
+    (function() {
+      const D = window.SCHEDULE_DATA;
+      const vac = D.vacation_windows;
+      function fmtDate(iso) {
+        const d = new Date(iso + 'T00:00:00');
+        return d.toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'});
+      }
+      function topWindow(year) {
+        const ws = vac[year] || [];
+        return ws.length ? ws[0] : null;
+      }
+      const stats = document.getElementById('summary-stats');
+      const years = ['2027','2028','2029'];
+      let html = '';
+      years.forEach(y => {
+        const tw = topWindow(y);
+        html += `<div class="card stat">
+          <div class="label">Best ${y} Vacation Window</div>
+          <div class="value">${tw ? tw.days + ' days' : 'None found'}</div>
+          <div class="detail">${tw ? fmtDate(tw.start) + ' – ' + fmtDate(tw.end) : 'No contiguous 7+ day free window found in modeled data.'}</div>
+        </div>`;
+      });
+      html += `<div class="card stat">
+        <div class="label">Tracked Categories</div>
+        <div class="value">5</div>
+        <div class="detail">MLB (all 30), 49ers NFL, Stanford NCAAF, Cal NCAAF, Westwood One national NFL radio</div>
+      </div>`;
+      stats.innerHTML = html;
+
+      const container = document.getElementById('vacation-windows');
+      years.forEach(y => {
+        const ws = vac[y] || [];
+        let section = `<div class="card" style="margin-bottom:16px"><h3>${y} Vacation Windows (7+ days, no tracked conflicts)</h3>`;
+        if (!ws.length) {
+          section += `<p class="note">No contiguous 7+ day free window found in the modeled range. This can happen when estimated season windows cover most of the year; check calendar for shorter gaps and verify estimates.</p>`;
+        } else {
+          section += `<p class="note">Showing top ${Math.min(ws.length, 6)} windows. Windows are based on verified events + season windows; ${y >= 2028 ? 'most ' + y + ' schedules are ESTIMATED/unreleased.' : 'some windows depend on estimated season boundaries.'}</p>`;
+          ws.slice(0,6).forEach((w, i) => {
+            section += `<div class="vac-window">
+              <div class="dates">${i===0 ? '★ Best: ' : ''}${fmtDate(w.start)} – ${fmtDate(w.end)} <span class="badge free">${w.days} days</span></div>
+              <div class="meta">No tracked MLB / 49ers / Stanford NCAAF / Cal NCAAF / Westwood One national NFL radio conflicts in modeled data. ${y >= 2028 ? '<span class="badge estimated">Based on estimated season windows</span>' : '<span class="badge mixed">Check estimated boundaries</span>'}</div>
+            </div>`;
+          });
+        }
+        section += `</div>`;
+        container.innerHTML += section;
+      });
+    })();
+  </script>
+</body>
+</html>

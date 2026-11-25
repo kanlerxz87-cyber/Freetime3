@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar / Scoreboard - Free Time Vacation</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">Free Time Vacation <span>SF Bay Area Sports Radio Planner</span></div>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="calendar.html" class="active">Calendar / Scoreboard</a>
+        <a href="games.html">Games &amp; Schedule</a>
+        <a href="sources.html">Sources &amp; Verification</a>
+        <a href="flagged.html">Flagged for Review</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>Calendar / Scoreboard</h2>
+      <p class="lead">Day-by-day view of free/busy status. Click a day for details. Use controls to move by day or month. Times shown in <strong>PST/PDT (America/Los_Angeles)</strong> where available; TBA/estimated times are labeled.</p>
+      <div class="callout warn"><strong>Estimates:</strong> Many 2027-2029 game-level schedules are unreleased. Days inside estimated season windows are marked <span class="badge estimated">busy-estimated</span> or mixed. Verify official schedules before making plans.</div>
+
+      <div class="calendar-controls">
+        <button class="btn" id="prev-day">◀ Yesterday</button>
+        <button class="btn" id="today-btn">Today / Start</button>
+        <button class="btn" id="next-day">Tomorrow ▶</button>
+        <span style="width:12px"></span>
+        <button class="btn" id="prev-month">◀ Month</button>
+        <div class="month-label" id="month-label"></div>
+        <button class="btn" id="next-month">Month ▶</button>
+        <label class="small">Jump to: <input type="date" id="jump-date" min="2026-11-25" max="2029-12-31" value="2026-11-25"></label>
+      </div>
+
+      <div class="legend">
+        <span><i class="swatch" style="background:#f3fbf5;border-color:#cce3d4"></i> Free (no tracked conflicts)</span>
+        <span><i class="swatch" style="background:#fff8f8;border-color:#f2c6c2"></i> Busy (verified)</span>
+        <span><i class="swatch" style="background:#fffdf2;border-color:#ecdca3"></i> Busy (estimated window)</span>
+        <span><i class="swatch" style="background:#fff7ed;border-color:#fed7aa"></i> Mixed verified + estimated</span>
+      </div>
+
+      <div class="cal-grid" id="cal-head"></div>
+      <div class="cal-grid" id="cal-grid"></div>
+
+      <div class="card day-detail" id="day-detail">
+        <h3>Day detail</h3>
+        <p class="note">Select a day to see conflicts, times, and sources.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>Calendar data is generated from official sources and labeled estimates. Verify before travel. &middot; America/Los_Angeles.</footer>
+
+  <script src="data/schedule-data.js"></script>
+  <script>
+    (function() {
+      const D = window.SCHEDULE_DATA;
+      const days = D.days;
+      const sources = D.sources;
+      const minDate = new Date('2026-11-25T00:00:00');
+      const maxDate = new Date('2029-12-31T00:00:00');
+      let currentMonth = new Date(2026, 10, 1); // Nov 2026
+      let selected = '2026-11-25';
+
+      const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      const head = document.getElementById('cal-head');
+      head.innerHTML = dayNames.map(d=>`<div class="cal-head">${d}</div>`).join('');
+
+      function iso(d) { return d.toISOString().slice(0,10); }
+      function parseIso(s) { const [y,m,dd]=s.split('-').map(Number); return new Date(y,m-1,dd); }
+      function clamp(d) { if (d<minDate) return new Date(minDate); if (d>maxDate) return new Date(maxDate); return d; }
+      function fmtLong(s) { const d=parseIso(s); return d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'}); }
+      function statusBadge(st) {
+        if (st==='free') return '<span class="badge free">FREE</span>';
+        if (st==='busy-verified') return '<span class="badge busy">BUSY - Verified</span>';
+        if (st==='busy-estimated') return '<span class="badge estimated">BUSY - Estimated Window</span>';
+        if (st==='busy-mixed') return '<span class="badge mixed">BUSY - Mixed</span>';
+        return `<span class="badge">${st}</span>`;
+      }
+
+      function renderMonth() {
+        const y = currentMonth.getFullYear(), m = currentMonth.getMonth();
+        document.getElementById('month-label').textContent = currentMonth.toLocaleDateString('en-US',{month:'long',year:'numeric'});
+        const first = new Date(y,m,1);
+        const last = new Date(y,m+1,0);
+        const startDow = first.getDay();
+        const grid = document.getElementById('cal-grid');
+        let html = '';
+        for (let i=0;i<startDow;i++) html += '<div class="cal-day empty"></div>';
+        for (let day=1; day<=last.getDate(); day++) {
+          const d = new Date(y,m,day);
+          const k = iso(d);
+          const entry = days[k];
+          const inRange = d>=minDate && d<=maxDate;
+          if (!inRange) { html += `<div class="cal-day empty"><div class="num">${day}</div></div>`; continue; }
+          const st = entry ? entry.status : 'unknown';
+          const sel = k===selected ? 'selected' : '';
+          const reasons = entry ? entry.reasons : [];
+          const cats = [...new Set(reasons.map(r=>r.category))].slice(0,3);
+          const dot = cats.length ? cats.map(c=>`<span class="pill">${c}</span>`).join(' ') : '<span class="pill">No conflicts</span>';
+          html += `<div class="cal-day ${st} ${sel}" data-date="${k}">
+            <div class="num">${day}</div>
+            <div class="dot">${st==='free' ? '<span style="color:#1b7f3a;font-weight:600">Free</span>' : dot}</div>
+          </div>`;
+        }
+        grid.innerHTML = html;
+        grid.querySelectorAll('.cal-day[data-date]').forEach(el => {
+          el.addEventListener('click', () => { selected = el.dataset.date; document.getElementById('jump-date').value = selected; renderMonth(); renderDetail(); });
+        });
+      }
+
+      function renderDetail() {
+        const entry = days[selected];
+        const el = document.getElementById('day-detail');
+        if (!entry) { el.innerHTML = `<h3>${fmtLong(selected)}</h3><p class="note">No data in modeled range.</p>`; return; }
+        let html = `<h3>${fmtLong(selected)} ${statusBadge(entry.status)}</h3>`;
+        if (entry.status === 'free') {
+          html += `<div class="callout good"><strong>Free day.</strong> No tracked MLB, 49ers NFL, Stanford NCAAF, Cal NCAAF, or Westwood One national NFL radio conflicts found in the modeled data for this day. Still verify against official schedules close to the date.</div>`;
+        } else {
+          html += `<p class="note">Conflicts/reasons below. "Verified" means the event/window is backed by an official/primary source entry in this project; "estimated" means modeled from typical season patterns because official game-level schedule is unreleased.</p>`;
+        }
+        const evs = entry.events || [];
+        if (evs.length) {
+          html += `<h4>Specific events/games</h4><div class="table-wrap"><table><thead><tr><th>Time (PT)</th><th>Event</th><th>Category</th><th>Priority</th><th>Duration (est.)</th><th>Status</th><th>Source</th></tr></thead><tbody>`;
+          evs.forEach(e => {
+            const src = (e.source_ids||[]).map(id=>sources[id]).filter(Boolean).map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${s.publisher}</a>`).join(', ');
+            html += `<tr>
+              <td>${e.time_pt ? e.time_pt+' PT' : (e.status.includes('tba') ? 'TBA' : '—')}</td>
+              <td>${e.title}${e.note?`<div class="small">${e.note}</div>`:''}</td>
+              <td>${e.category}</td>
+              <td><span class="badge high">${e.priority}</span></td>
+              <td>${e.duration_minutes ? '~'+e.duration_minutes+' min' : ''}<div class="small">${e.duration_label||''}</div></td>
+              <td>${statusBadge(e.status.startsWith('verified')?'busy-verified':'busy-estimated')}</td>
+              <td>${src || (e.source_url?`<a href="${e.source_url}" target="_blank" rel="noopener">link</a>`:'')}</td>
+            </tr>`;
+          });
+          html += `</tbody></table></div>`;
+        }
+        const reasons = (entry.reasons||[]).filter(r=>r.window_id);
+        if (reasons.length) {
+          html += `<h4>Season/window reasons</h4><div class="table-wrap"><table><thead><tr><th>Window</th><th>Category</th><th>Status</th><th>Note</th><th>Source</th></tr></thead><tbody>`;
+          reasons.forEach(r => {
+            const src = (r.source_ids||[]).map(id=>sources[id]).filter(Boolean).map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${s.publisher}</a>`).join(', ');
+            html += `<tr><td>${r.label}</td><td>${r.category}</td><td>${statusBadge(r.status.startsWith('verified')?'busy-verified':'busy-estimated')}</td><td class="small">${r.note||''}</td><td>${src}</td></tr>`;
+          });
+          html += `</tbody></table></div>`;
+        }
+        el.innerHTML = html;
+      }
+
+      function moveDay(delta) {
+        const d = parseIso(selected);
+        d.setDate(d.getDate()+delta);
+        const c = clamp(d);
+        selected = iso(c);
+        currentMonth = new Date(c.getFullYear(), c.getMonth(), 1);
+        document.getElementById('jump-date').value = selected;
+        renderMonth(); renderDetail();
+      }
+      document.getElementById('prev-day').onclick = ()=>moveDay(-1);
+      document.getElementById('next-day').onclick = ()=>moveDay(1);
+      document.getElementById('today-btn').onclick = ()=>{ selected='2026-11-25'; currentMonth=new Date(2026,10,1); document.getElementById('jump-date').value=selected; renderMonth(); renderDetail(); };
+      document.getElementById('prev-month').onclick = ()=>{ currentMonth.setMonth(currentMonth.getMonth()-1); renderMonth(); };
+      document.getElementById('next-month').onclick = ()=>{ currentMonth.setMonth(currentMonth.getMonth()+1); renderMonth(); };
+      document.getElementById('jump-date').onchange = (e)=>{ const v=e.target.value; if(!v) return; const d=clamp(parseIso(v)); selected=iso(d); currentMonth=new Date(d.getFullYear(),d.getMonth(),1); renderMonth(); renderDetail(); };
+
+      renderMonth();
+      renderDetail();
+    })();
+  </script>
+</body>
+</html>
