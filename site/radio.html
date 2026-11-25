@@ -1,63 +1,22 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SF Radio / Broadcasts - Freetime3</title>
-  <link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
-<header><div class="wrap"><h1>SF Bay Area Radio / Broadcasts</h1><div class="sub">Live over-the-air AM/FM radio focus for Outer Sunset, San Francisco 94122. Carriage must be verified per station/game; this page links official station/schedule sources.</div></div></header>
-<nav><div class="wrap">
-  <a href="index.html">Executive Summary</a><a href="calendar.html">Calendar / Scoreboard</a><a href="schedules.html">Schedule Tables</a><a class="active" href="radio.html">SF Radio / Broadcasts</a><a href="sources.html">Sources & Verification</a><a href="flagged.html">Flagged for Review</a>
-</div></nav>
-<div class="wrap">
-  <div class="notice warn mb"><strong>Receivability note:</strong> "Available in San Francisco Bay Area on standard AM/FM radio" depends on station signal, location, time of day, and affiliate carriage. This page provides official station/source links; it does not guarantee reception at 94122 for every listed game. Unverified carriage is flagged.</div>
-
-  <div class="card mb">
-    <h2>Key Stations / Networks to Verify</h2>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Station / Network</th><th>Type</th><th>Relevant coverage</th><th>Official source</th><th>Verification status</th><th>Notes</th></tr></thead>
-        <tbody>
-          <tr><td>KNBR 680 AM / 104.5 FM (The Sports Leader)</td><td>AM/FM SF Bay Area</td><td>SF Giants flagship radio network (historically); verify current game carriage</td><td><a href="https://www.thesportsleader.com/" target="_blank">thesportsleader.com</a>, <a href="https://www.mlb.com/giants/schedule" target="_blank">MLB Giants schedule</a></td><td><span class="pill warn">Needs per-game verification</span></td><td>Giants broadcast listings on MLB/sports sites often list KNBR 680; confirm current rights and 94122 reception.</td></tr>
-          <tr><td>95.7 The Game (KGMZ-FM)</td><td>FM SF Bay Area</td><td>Bay Area sports station; verify specific team rights/carriage</td><td><a href="https://www.957thegame.com/" target="_blank">957thegame.com</a></td><td><span class="pill warn">Needs verification</span></td><td>Do not assume team carriage without official schedule confirmation.</td></tr>
-          <tr><td>Westwood One Sports</td><td>National radio network / affiliates</td><td>National NFL broadcasts (TNF, SNF, MNF, Thanksgiving, playoffs, etc.)</td><td><a href="https://www.westwoodonesports.com/nfl-schedule/" target="_blank">NFL Schedule</a>, <a href="https://www.westwoodonesports.com/station-finder" target="_blank">Station Finder</a></td><td><span class="pill ok">Schedule source verified</span></td><td>Affiliate AM/FM availability in 94122 must be confirmed via Station Finder/local listings.</td></tr>
-          <tr><td>KGO 810 AM / other local affiliates</td><td>AM SF Bay Area</td><td>Possible local news/sports carriage; verify per event</td><td><a href="https://www.kgoradio.com/" target="_blank">kgoradio.com</a></td><td><span class="pill warn">Unverified for sports conflict scope</span></td><td>Include only after confirming specific live sports carriage relevant to tracked categories.</td></tr>
-          <tr><td>A's radio network / A's Cast / local AM-FM affiliates</td><td>Radio network</td><td>Athletics game broadcasts; verify AM/FM over-the-air availability in SF 94122</td><td><a href="https://www.mlb.com/athletics/schedule" target="_blank">Athletics schedule</a></td><td><span class="pill warn">Needs verification</span></td><td>A's have used A's Cast and radio affiliates; over-the-air AM/FM in SF should be confirmed per season.</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="card mb">
-    <h2>Westwood One NFL National Broadcasts (Verified from official schedule)</h2>
-    <p class="small muted">Source: <a href="https://www.westwoodonesports.com/nfl-schedule/" target="_blank">Westwood One Sports NFL Schedule</a> (accessed 2026-11-25). Times converted to PT for planning.</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Date</th><th>PT Start</th><th>Matchup</th><th>Window</th><th>Status</th><th>Source</th></tr></thead>
-        <tbody id="ww1Rows"></tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>How to confirm "live over AM/FM in 94122"</h2>
-    <ol class="clean">
-      <li>Check the official team/league schedule for radio broadcast listing (MLB team schedule, 49ers game page, Stanford/Cal athletics).</li>
-      <li>Check <a href="https://www.westwoodonesports.com/station-finder" target="_blank">Westwood One Station Finder</a> for national NFL games.</li>
-      <li>Check the local station schedule (KNBR, 95.7 The Game, or listed affiliate) on game day.</li>
-      <li>Confirm AM/FM reception at your location (Outer Sunset 94122) — reception varies.</li>
-      <li>If carriage cannot be confirmed from an official source, treat as <span class="pill warn">unverified</span> and do not assume free.</li>
-    </ol>
-  </div>
-</div>
-<div class="footer">Freetime3 · Radio/Broadcasts</div>
-<script src="assets/data.js"></script>
-<script>
-(function(){
-  const rows=window.FREETIME_DATA.events.filter(e=>e.category==='Westwood One NFL').sort((a,b)=>a.date.localeCompare(b.date)||(a.timePT||'').localeCompare(b.timePT||''));
-  document.getElementById('ww1Rows').innerHTML=rows.map(r=>`<tr><td>${r.date}</td><td>${r.timePT||'TBD'}</td><td>${r.opponent}</td><td class="small">${r.notes||''}</td><td>${r.status}</td><td><a href="${r.sourceUrl}" target="_blank">official</a></td></tr>`).join('');
-})();
-</script>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Radio Guide — Free Time Vacation</title><link rel="stylesheet" href="style.css"></head><body>
+<header><h1>📻 Bay Area Radio Guide</h1><p>What's actually on the AM/FM dial in the Outer Sunset (94122)</p></header>
+<nav><a href="index.html">🏠 Home</a><a href="executive-summary.html">📋 Executive Summary</a><a href="vacation-windows.html">✈️ Vacation Windows</a><a href="scoreboard.html">📅 Day Scoreboard</a><a href="schedules.html">📊 Verified Schedules</a><a href="radio.html" class="on">📻 Radio Guide</a><a href="methodology.html">🔬 Methodology</a><a href="flagged.html">🚩 Flagged for Review</a></nav>
+<main>
+<div class="card"><h2>Stations in the tracked set</h2><table><tr><th>Station</th><th>What it carries</th><th>Source</th></tr>
+<tr><td><b>KNBR 680 AM / 104.5 FM</b></td><td>Giants baseball (flagship) <span class="badge b-hi">HIGH</span> · 49ers + Westwood One NFL</td><td><a href="https://www.knbr.com/">knbr.com</a></td></tr>
+<tr><td><b>KSFO 810 AM</b></td><td>Cal Golden Bears football <span class="badge b-hi">HIGH</span></td><td><a href="https://calbears.com/sports/football/schedule/2026">calbears.com</a></td></tr>
+<tr><td><b>Westwood One Sports network</b></td><td>National NFL radio: TNF / SNF / MNF, Thanksgiving &amp; Christmas tripleheaders, playoffs, Super Bowl</td><td><a href="https://www.westwoodonesports.com/nfl-schedule/">westwoodonesports.com</a></td></tr>
+<tr><td><b>Stanford radio (Learfield)</b></td><td>Stanford Cardinal football <span class="badge b-hi">HIGH</span> (via gostanford.com audio)</td><td><a href="https://gostanford.com/sports/football/schedule">gostanford.com</a></td></tr>
+<tr><td><b>Athletics radio</b></td><td>A's baseball <span class="badge b-hi">HIGH</span> (flagship varies by season; check athletics.com)</td><td><a href="https://www.mlb.com/athletics">mlb.com/athletics</a></td></tr></table>
+<p class="note">All 30 MLB clubs are tracked for the "free" test even though only Giants/A's are on Bay Area radio — the goal is zero games you'd want to stay home for. National Westwood One games are on Bay Area affiliates (incl. KNBR) whenever the local team isn't playing.</p></div>
+<div class="card"><h2>How to read a game day</h2>
+<p>On any busy day, at least one tracked game is on the air. Typical Pacific-time windows:</p>
+<table><tr><th>Sport</th><th>Typical start (PT)</th><th>Duration</th><th>Busy window</th></tr>
+<tr><td>MLB (day)</td><td>10:00 AM – 1:30 PM</td><td>~2h 38m</td><td>10:00 AM – ~4:00 PM</td></tr>
+<tr><td>MLB (night)</td><td>4:00 – 7:15 PM</td><td>~2h 38m</td><td>4:00 – ~10:00 PM</td></tr>
+<tr><td>NFL Sunday</td><td>10:00 AM / 1:25 PM / 5:20 PM</td><td>~3h 12m</td><td>10:00 AM – ~8:30 PM</td></tr>
+<tr><td>NFL Thu/Mon night</td><td>5:15 – 5:20 PM</td><td>~3h 12m</td><td>5:15 – ~8:30 PM</td></tr>
+<tr><td>NCAAF Saturday</td><td>9:00 AM – 7:30 PM</td><td>~3h 12m</td><td>9:00 AM – ~10:30 PM</td></tr></table>
+<p class="note">Durations: MLB 2h38m (2025 avg, <a href="https://www.lines.com/guides/how-long-is-baseball-game/1523">source</a>) · NFL/NCAAF 3h12m (<a href="https://huffsports.com/football/how-long-is-an-nfl-game/">source</a>). Exact daily free hours: use the <a href="scoreboard.html">Day Scoreboard</a>.</p></div>
+</main><footer><a href="index.html">← Home</a></footer></body></html>

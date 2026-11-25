@@ -1,0 +1,100 @@
+name: Deploy static site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Validate static files and internal links
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          import json
+          import re
+          import sys
+
+          root = Path('.')
+          class Checker(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.ids = set()
+                  self.refs = []
+                  self.anchors = []
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if attrs.get('id'):
+                      self.ids.add(attrs['id'])
+                  if tag == 'a' and attrs.get('href', '').startswith('#'):
+                      self.anchors.append(attrs['href'][1:])
+                  if tag == 'script' and attrs.get('src') and not attrs['src'].startswith(('http:', 'https:')):
+                      self.refs.append(attrs['src'].split('?')[0])
+                  if tag == 'link' and attrs.get('rel') == 'stylesheet' and attrs.get('href') and not attrs['href'].startswith(('http:', 'https:')):
+                      self.refs.append(attrs['href'].split('?')[0])
+
+          parser = Checker()
+          parser.feed((root / 'index.html').read_text())
+          missing = [ref for ref in parser.refs if not (root / ref).is_file()]
+          broken_anchors = sorted(set(parser.anchors) - parser.ids)
+          if missing or broken_anchors:
+              if missing:
+                  print('Missing local assets:', ', '.join(missing))
+              if broken_anchors:
+                  print('Missing in-page targets:', ', '.join(broken_anchors))
+              sys.exit(1)
+          data = json.loads((root / 'data/verified-schedules.json').read_text())
+          statuses = {'PUBLISHED', 'PARTIAL', 'NOT_VERIFIED', 'PUBLISHED_DYNAMIC'}
+          if any(row.get('status') not in statuses for row in data['schedule_status']):
+              print('Unexpected or inferred schedule status found.')
+              sys.exit(1)
+          if data['duration_estimates']['mlb_average_minutes'] is not None or data['duration_estimates']['football_average_minutes'] is not None:
+              print('Unverified duration must remain blank.')
+              sys.exit(1)
+          if len(re.findall(r"\['[^']+','[^']+','(?:AL|NL) [^']+'", (root / 'assets/app.js').read_text())) != 30:
+              print('Expected 30 MLB club links.')
+              sys.exit(1)
+          if b'No fully verified week-long vacation window can be certified' not in (root / 'index.html').read_bytes():
+              print('Executive summary must retain the verified-free-time warning.')
+              sys.exit(1)
+          print(f'Validated {len(parser.ids)} HTML ids, {len(parser.anchors)} in-page links, {len(parser.refs)} local assets, and schedule evidence.')
+          PY
+      - name: Assemble static site
+        run: |
+          mkdir -p _site
+          cp ./*.html _site/
+          cp -R assets _site/
+          touch _site/.nojekyll
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    if: github.event_name != 'pull_request'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

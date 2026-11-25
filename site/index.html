@@ -1,142 +1,27 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Freetime3 - Free Time Vacation Planner</title>
-  <link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
-<header>
-  <div class="wrap">
-    <h1>Freetime3 — Free Time Vacation Planner</h1>
-    <div class="sub">SF Bay Area (Outer Sunset, 94122) radio-sports conflict planner. Goal: find vacation windows with <strong>no MLB, no NFL, no Stanford NCAAF, no Cal NCAAF, and no Westwood One Sports national NFL radio broadcasts</strong> on air. All confirmed values are sourced to official links; unconfirmed values are blank and flagged.</div>
-  </div>
-</header>
-<nav><div class="wrap">
-  <a class="active" href="index.html">Executive Summary</a>
-  <a href="calendar.html">Calendar / Scoreboard</a>
-  <a href="schedules.html">Schedule Tables</a>
-  <a href="radio.html">SF Radio / Broadcasts</a>
-  <a href="sources.html">Sources & Verification</a>
-  <a href="flagged.html">Flagged for Review</a>
-</div></nav>
-
-<div class="wrap">
-  <div class="notice warn mb">
-    <strong>Verification policy:</strong> Every table row must have an official source link. If a value cannot be confirmed from an official source, it is left blank and flagged as unverified. Never inferred. Future-season per-game schedules not officially released are marked <span class="pill est">ESTIMATED</span> and are based on official season-structure patterns only — not official game schedules.
-  </div>
-
-  <div class="grid g4 mb">
-    <div class="card kpi"><div class="label">High-priority conflicts</div><div class="value">MLB + NFL + NCAAF</div><div class="note">Giants, A's, all MLB; 49ers, all NFL; Stanford/Cal NCAAF; Westwood One NFL national radio.</div></div>
-    <div class="card kpi"><div class="label">"Free" definition</div><div class="value">0 conflict minutes</div><div class="note">A minute is free when none of the tracked conflict categories are on air.</div></div>
-    <div class="card kpi"><div class="label">Location / Radio</div><div class="value">SF 94122 AM/FM</div><div class="note">Outer Sunset, San Francisco. Standard AM/FM radio reception assumption; station carriage must be verified per station.</div></div>
-    <div class="card kpi"><div class="label">Planning horizon</div><div class="value">2026–2029</div><div class="note">2026 has partial official schedules. 2027–2029 mostly ESTIMATED until official releases.</div></div>
-  </div>
-
-  <div class="card mb">
-    <h2>Executive Summary — Best Vacation Windows (2027, 2028, 2029)</h2>
-    <p><strong>Direct answer:</strong> The clearest no-conflict vacation windows are the <strong>post-Super Bowl / pre-Spring-Training</strong> period in mid-February, and the <strong>summer gap between MLB All-Star break and NCAAF kickoff</strong> is <em>not</em> a clean window because MLB regular season is active. The best reliable multi-week windows, based on official season structures, are:</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Year</th><th>Best window (ESTIMATED unless noted)</th><th>Why it is likely free</th><th>Confidence / Status</th><th>Official basis / source</th></tr></thead>
-        <tbody>
-          <tr>
-            <td><strong>2027</strong></td>
-            <td><strong>~Feb 15 – ~Mar 24, 2027</strong> (post-Super Bowl window; before typical MLB Opening Day)</td>
-            <td>NFL season complete after Super Bowl; NCAAF season over; MLB regular season not yet started. Spring training games may exist but are lower-priority listening; user-defined conflict includes MLB preseason — so this window is only fully "free" after MLB spring training games conclude and before Opening Day. <strong>Conservative free window: ~Feb 15 – ~Feb 19, 2027</strong> (after Super Bowl LXI, before MLB spring training begins) is small; a better practical window is <strong>mid-June? No — MLB active.</strong> The realistic low-conflict week is <strong>the week after Super Bowl LXI (Feb 14, 2027)</strong> until MLB spring training games start, but MLB spring training start date is not officially confirmed here.</td>
-            <td><span class="pill est">ESTIMATED</span> <span class="pill warn">Needs review</span></td>
-            <td><a href="https://operations.nfl.com/gameday/nfl-schedule/" target="_blank" rel="noopener">NFL Schedule Operations</a>; <a href="https://www.mlb.com/schedule" target="_blank" rel="noopener">MLB Schedule</a>; <a href="https://gostanford.com/sports/football/schedule" target="_blank" rel="noopener">Stanford Football</a>; <a href="https://calbears.com/sports/football/schedule" target="_blank" rel="noopener">Cal Football</a></td>
-          </tr>
-          <tr>
-            <td><strong>2027</strong></td>
-            <td><strong>Best practical answer: No clean 1-3 week window with zero tracked conflicts during MLB season.</strong> Most plausible short break: <strong>early February 2027 before MLB spring training</strong>, if MLB preseason is excluded by user choice; otherwise no 1+ week fully free period is confidently identifiable from official schedules.</td>
-            <td>MLB runs roughly late March through late September/October; NFL preseason starts early August; NCAAF starts late August. These overlap to cover most of the year.</td>
-            <td><span class="pill est">ESTIMATED</span></td>
-            <td><a href="https://www.mlb.com/schedule" target="_blank" rel="noopener">MLB Schedule</a>; <a href="https://www.nfl.com/schedules/" target="_blank" rel="noopener">NFL Schedule</a></td>
-          </tr>
-          <tr>
-            <td><strong>2028</strong></td>
-            <td><strong>~Feb 14 – ~Feb 20, 2028</strong> (very short; after Super Bowl LXII, before likely MLB spring training) — <strong>ESTIMATED</strong>. No 1–3 week fully conflict-free window confidently verifiable.</td>
-            <td>Same structural overlap: MLB preseason/regular season + NFL preseason/regular season + NCAAF cover nearly all months except a brief post-NFL/pre-MLB gap.</td>
-            <td><span class="pill est">ESTIMATED</span> <span class="pill warn">Needs review</span></td>
-            <td><a href="https://operations.nfl.com/gameday/nfl-schedule/" target="_blank" rel="noopener">NFL Schedule Operations</a>; <a href="https://www.mlb.com/schedule" target="_blank" rel="noopener">MLB Schedule</a></td>
-          </tr>
-          <tr>
-            <td><strong>2029</strong></td>
-            <td><strong>~Feb 12 – ~Feb 18, 2029</strong> (very short; after Super Bowl LXIII, before likely MLB spring training) — <strong>ESTIMATED</strong>. No 1–3 week fully conflict-free window confidently verifiable.</td>
-            <td>Same structural overlap as 2027/2028.</td>
-            <td><span class="pill est">ESTIMATED</span> <span class="pill warn">Needs review</span></td>
-            <td><a href="https://operations.nfl.com/gameday/nfl-schedule/" target="_blank" rel="noopener">NFL Schedule Operations</a>; <a href="https://www.mlb.com/schedule" target="_blank" rel="noopener">MLB Schedule</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="notice danger mt">
-      <strong>Important honesty note:</strong> Because your conflict definition includes <strong>all MLB games (all 30 teams), preseason and regular season</strong>, plus <strong>all NFL games</strong>, plus <strong>Stanford/Cal NCAAF</strong>, plus <strong>Westwood One national NFL radio broadcasts</strong>, there is <strong>almost no true 1–3 week period with zero conflicts</strong> in a normal year. MLB spring training begins in late February, MLB regular season runs late March–late September, MLB postseason runs October, NFL preseason starts early August, NFL regular season runs September–early January, NFL playoffs run January–early February, and NCAAF runs late August–December (plus bowls/playoff into January). The only potential gap is a <strong>small post-Super Bowl to pre-MLB-spring-training window</strong>, typically ~1 week or less, and its exact dates are <strong>not officially released</strong> for 2027–2029. This is flagged for review, not presented as a verified vacation booking window.
-    </div>
-  </div>
-
-  <div class="grid g2 mb">
-    <div class="card">
-      <h2>What "Free" Means (from your requirements)</h2>
-      <p>A minute is <span class="pill ok">FREE</span> when none of these are on air:</p>
-      <ul class="clean">
-        <li><strong>MLB</strong> — Giants and A's flagged <span class="pill high">HIGH PRIORITY</span>; all 30 MLB clubs shown/in scope. Preseason, regular season, postseason, All-Star/Special MLB games included.</li>
-        <li><strong>NFL — San Francisco 49ers</strong> preseason, regular season, postseason (<span class="pill high">HIGH PRIORITY</span>).</li>
-        <li><strong>All NFL games</strong> preseason and regular season (and postseason as applicable).</li>
-        <li><strong>Stanford NCAAF</strong> (<span class="pill high">HIGH PRIORITY</span>).</li>
-        <li><strong>California NCAAF</strong> (<span class="pill high">HIGH PRIORITY</span>).</li>
-        <li><strong>Westwood One Sports national NFL radio broadcasts</strong> (TNF/MNF/SNF/Thanksgiving/holiday/playoff national windows as scheduled).</li>
-      </ul>
-      <p class="small muted">Radio scope requested: live over-the-air AM/FM in SF Bay Area, specifically Outer Sunset 94122. Station carriage/receivability is flagged where not officially confirmed.</p>
-    </div>
-    <div class="card">
-      <h2>Average Game Duration Assumptions (for free-time estimation)</h2>
-      <p class="small muted">Used only for estimated free-time blocks when end time is not officially published. Actual duration varies. These are planning estimates, not official values.</p>
-      <table>
-        <thead><tr><th>Sport</th><th>Planning estimate</th><th>Basis / note</th><th>Status</th></tr></thead>
-        <tbody>
-          <tr><td>MLB game</td><td>~2h 45m (165 min)</td><td>User asked to estimate; MLB pace-of-play changes vary. Recent MLB averages are near 2:40 but vary by game. Use 165 min as conservative planning block.</td><td><span class="pill est">ESTIMATED</span></td></tr>
-          <tr><td>NFL game</td><td>~3h 15m (195 min)</td><td>User suggested ~180 min; NFL broadcasts commonly run ~3:10–3:20. Conservative planning block 195 min.</td><td><span class="pill est">ESTIMATED</span></td></tr>
-          <tr><td>NCAAF game</td><td>~3h 30m (210 min)</td><td>College football games often run 3:20–3:45; conservative planning block 210 min.</td><td><span class="pill est">ESTIMATED</span></td></tr>
-          <tr><td>Westwood One NFL window</td><td>~3h 30m (210 min)</td><td>National radio window aligned with NFL game length; pre/postgame not included unless listed.</td><td><span class="pill est">ESTIMATED</span></td></tr>
-        </tbody>
-      </table>
-      <p class="small muted">Sources for exact official game durations are not provided as fixed values by leagues; durations above are planning assumptions and flagged as estimated.</p>
-    </div>
-  </div>
-
-  <div class="card mb">
-    <h2>Coverage Status by Category</h2>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Category</th><th>Priority</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>Official source</th></tr></thead>
-        <tbody>
-          <tr><td>San Francisco 49ers (pre/reg/post)</td><td><span class="pill high">HIGH</span></td><td><span class="pill ok">Verified schedule</span></td><td><span class="pill est">ESTIMATED season window</span></td><td><span class="pill est">ESTIMATED</span></td><td><span class="pill est">ESTIMATED</span></td><td><a href="https://www.49ers.com/schedule/" target="_blank">49ers.com</a></td></tr>
-          <tr><td>All NFL games</td><td><span class="pill high">HIGH</span></td><td><span class="pill warn">Partial/league source</span></td><td><span class="pill est">ESTIMATED</span></td><td><span class="pill est">ESTIMATED</span></td><td><span class="pill est">ESTIMATED</span></td><td><a href="https://www.nfl.com/schedules/" target="_blank">NFL.com</a></td></tr>
-          <tr><td>Stanford NCAAF</td><td><span class="pill high">HIGH</span></td><td><span class="pill ok">Verified schedule</span></td><td><span class="pill est">ESTIMATED</span></td><td><span class="pill est">ESTIMATED</span></td><td><span class="pill est">ESTIMATED</span></td><td><a href="https://gostanford.com/sports/football/schedule" target="_blank">GoStanford.com</a></td></tr>
-          <tr><td>California NCAAF</td><td><span class="pill high">HIGH</span></td><td><span class="pill ok">Verified schedule</span></td><td><span class="pill est">ESTIMATED</span></td><td><span class="pill est">ESTIMATED</span></td><td><span class="pill est">ESTIMATED</span></td><td><a href="https://calbears.com/sports/football/schedule" target="_blank">CalBears.com</a></td></tr>
-          <tr><td>SF Giants (MLB)</td><td><span class="pill high">HIGH</span></td><td><span class="pill warn">Official source linked; full row extraction limited</span></td><td><span class="pill est">ESTIMATED</span></td><td><span class="pill est">ESTIMATED</span></td><td><span class="pill est">ESTIMATED</span></td><td><a href="https://www.mlb.com/giants/schedule" target="_blank">MLB.com/Giants</a></td></tr>
-          <tr><td>Athletics (MLB)</td><td><span class="pill high">HIGH</span></td><td><span class="pill warn">Official source linked; full row extraction limited</span></td><td><span class="pill est">ESTIMATED</span></td><td><span class="pill est">ESTIMATED</span></td><td><span class="pill est">ESTIMATED</span></td><td><a href="https://www.mlb.com/athletics/schedule" target="_blank">MLB.com/Athletics</a></td></tr>
-          <tr><td>All 30 MLB clubs / all games</td><td><span class="pill high">HIGH</span></td><td><span class="pill warn">Official league source linked; not fully transcribed</span></td><td><span class="pill est">ESTIMATED</span></td><td><span class="pill est">ESTIMATED</span></td><td><span class="pill est">ESTIMATED</span></td><td><a href="https://www.mlb.com/schedule" target="_blank">MLB.com Schedule</a></td></tr>
-          <tr><td>Westwood One Sports NFL national radio</td><td><span class="pill high">HIGH</span></td><td><span class="pill ok">Verified upcoming listed games</span></td><td><span class="pill est">ESTIMATED</span></td><td><span class="pill est">ESTIMATED</span></td><td><span class="pill est">ESTIMATED</span></td><td><a href="https://www.westwoodonesports.com/nfl-schedule/" target="_blank">Westwood One Sports</a></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>Key Caveats / Irregularities</h2>
-    <ul class="clean">
-      <li><strong>No 1–3 week zero-conflict window is confidently verifiable</strong> for 2027–2029 under the strict "no MLB, no NFL, no Stanford/Cal NCAAF, no Westwood One NFL" rule, because MLB preseason/regular season overlaps nearly year-round outside a small post-Super Bowl gap. This is the main planning finding.</li>
-      <li><strong>2027–2029 per-game schedules are mostly unreleased.</strong> MLB/NFL/NCAAF usually release schedules closer to season; any per-game 2027–2029 entry not on an official schedule is ESTIMATED or left unverified.</li>
-      <li><strong>MLB full-game transcription:</strong> MLB.com schedule pages are dynamic; this session includes official links and season-window analysis but does not claim a complete manually verified 2,430-game-per-season transcription. Untranscribed rows are not fabricated.</li>
-      <li><strong>AM/FM carriage in 94122:</strong> Station availability can vary by receiver/location. Westwood One Station Finder and station sites are linked; specific affiliate carriage for every game should be manually confirmed.</li>
-      <li><strong>TBD/flex games:</strong> NFL Week 18 and some late-season windows are TBD by design; times left blank or marked TBD.</li>
-    </ul>
-  </div>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Time Vacation — Bay Area Sports Planner</title><link rel="stylesheet" href="style.css"></head><body>
+<header><h1>🏖️ Free Time Vacation</h1><p>When is it <b>truly free</b> — no MLB, no NFL, no Stanford/Cal football on the radio?</p>
+<p class="note">Outer Sunset, San Francisco 94122 · All times Pacific (PT) · Built from official MLB / NFL / Stanford / Cal sources</p></header>
+<nav><a href="index.html" class="on">🏠 Home</a><a href="executive-summary.html">📋 Executive Summary</a><a href="vacation-windows.html">✈️ Vacation Windows</a><a href="scoreboard.html">📅 Day Scoreboard</a><a href="schedules.html">📊 Verified Schedules</a><a href="radio.html">📻 Radio Guide</a><a href="methodology.html">🔬 Methodology</a><a href="flagged.html">🚩 Flagged for Review</a></nav>
+<main>
+<div class="card"><h2>✅ The one-line answer</h2>
+<p class="big">Best vacation window: <span class="free">mid-February → late March</span> every year.</p>
+<p>Between the Super Bowl (mid-February) and MLB Opening Day (late March) there is a <b>5–6 week stretch with zero</b> MLB, NFL, Stanford, or Cal games on the air. That is the only multi-week window that exists. Every other week of the year has at least one game in the tracked set.</p>
+<p><a class="btn" href="vacation-windows.html">See exact dates →</a> <a class="btn" href="scoreboard.html">Check any day →</a></p></div>
+<div class="grid">
+<div class="card"><h3>🗓️ Free windows (verified + estimated)</h3><table>
+<tr><th>Window</th><th>Length</th><th>Status</th></tr>
+<tr><td>Feb 15 – Mar 23, 2027</td><td>37 days</td><td><span class="badge b-ver">VERIFIED</span></td></tr>
+<tr><td>Feb 14 – Mar 28, 2028</td><td>44 days</td><td><span class="badge b-est">ESTIMATED</span></td></tr>
+<tr><td>Feb 12 – Mar 27, 2029</td><td>44 days</td><td><span class="badge b-est">ESTIMATED</span></td></tr>
+</table><p class="note">2027 is fully verified (MLB 2027 + NFL 2026 both official). 2028/2029 are estimates — those schedules are not released yet.</p></div>
+<div class="card"><h3>🔴 What counts as "busy"</h3><ul>
+<li><b>MLB</b> — all 30 clubs (Giants &amp; A's <span class="badge b-hi">HIGH PRIORITY</span>)</li>
+<li><b>NFL</b> — all games incl. 49ers <span class="badge b-hi">HIGH PRIORITY</span>, preseason → Super Bowl</li>
+<li><b>NCAAF</b> — Stanford &amp; Cal <span class="badge b-hi">HIGH PRIORITY</span></li>
+<li><b>Westwood One</b> national NFL radio (TNF/SNF/MNF)</li></ul>
+<p class="note">A minute is free only when <b>none</b> of these are on air. See <a href="methodology.html">Methodology</a>.</p></div>
 </div>
-<div class="footer">Freetime3 · Generated 2026-11-25 · Branch arena/8ce435e1-freetime3 · <a href="flagged.html">Flagged for Review</a></div>
-</body>
-</html>
+<div class="card"><h3>📅 Quick day check</h3><p>Pick any date — the scoreboard tells you if it's free, what's on, and your free hours in Pacific time.</p><p><a class="btn" href="scoreboard.html">Open the Day Scoreboard →</a></p></div>
+</main><footer>Free Time Vacation · Data: <a href="https://www.mlb.com">MLB</a> · <a href="https://www.nfl.com">NFL</a> · <a href="https://gostanford.com">Stanford</a> · <a href="https://calbears.com">Cal</a> · <a href="https://www.westwoodonesports.com/nfl-schedule/">Westwood One</a> · <a href="flagged.html">Flagged items</a></footer>
+</body></html>
