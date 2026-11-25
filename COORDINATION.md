@@ -72,3 +72,22 @@ This session is the **final integration session** (repo was empty except README;
 - **PR #4** [Add official references to remaining review flags](https://github.com/kanlerxz87-cyber/Freetime3/pull/4) was merged on 2026-11-25 (merge commit `902a888997c27a73d0a9a1de8b16e2fc97b1f3ea`). Build and Pages deployment workflow run [45628952837](https://github.com/kanlerxz87-cyber/Freetime3/actions/runs/45628952837) succeeded.
 - Live GitHub Pages URL: https://kanlerxz87-cyber.github.io/Freetime3/ (Pages reports `status: built`; live page was fetched after deploy and displayed the official MLB feed result for the selected date).
 - All-sports schedule gaps remain `needs review` and are published under the on-site Flagged for Review page; they do not block publication.
+
+## Comprehensive Official Verification, Minute-Level PST Scoreboard & Multi-Page Integration — `62ff6e66`
+
+Session ID: `62ff6e66` · Branch: `arena/62ff6e66-freetime3` (fixed Arena session branch; rebased onto `64107b0` `main` preserving `f23a77a4`, `43e51ad8`, and `9000e9d9` work)
+
+| # | Task | Status | Owner | Files / Scope |
+|---|------|--------|-------|---------------|
+| 5 | Line-by-line audit of existing repo (`data/verified-schedules.json`, `docs/data.js`, `site/*`, `assets/*`, root HTMLs) against official MLB, NFL, NCAAF, Westwood One & Bay Area radio sources | in progress | 62ff6e66 | `COORDINATION.md`, `data/`, `docs/data.js`, `flagged.html` |
+| 6 | Official verification of SF Outer Sunset (94122) AM/FM sports radio carriage, Westwood One Station Finder & schedules, Warriors/Valkyries/Earthquakes/Stanford/Cal AM/FM broadcasts, and official MLB/NFL/NCAAF game & halftime durations | in progress | 62ff6e66 | `data/`, `radio.html`, `methodology.html` |
+| 7 | Build full 2026–2029 verified + clearly-badged estimated schedules (all 30 MLB clubs, Giants/A's high priority, full NFL Weeks 12–18 + 49ers preseason/regular + playoffs + official 2026–27 Pro Bowl abolition, Stanford & Cal 2026–2029 NCAAF, Westwood One) + minute-level PST/PT daily scoreboard & interactive month calendar | in progress | 62ff6e66 | `data/`, `assets/`, `scoreboard.html`, `schedules.html`, `vacation-windows.html`, `executive-summary.html` |
+| 8 | Final multi-page + dashboard integration (clean landing page + dedicated subpages by category, zero broken links, `.github/workflows/pages.yml` checks, PR to `main`, merge, GitHub Pages live verification) | in progress | 62ff6e66 | `index.html`, `assets/`, `site/`, `README.md`, `.github/workflows/pages.yml`, `COORDINATION.md` |
+
+### Conflict resolution & audit log (`62ff6e66`)
+- Resolved rebase conflict in `COORDINATION.md` when `origin/main` advanced from `e18dd14` to `64107b0` (PRs #3–#5 from `9000e9d9`, marked `needs review` / merged). Preserved 100% of `f23a77a4`, `43e51ad8`, and `9000e9d9` entries without discarding any prior work.
+- Critical findings from official primary sources being integrated:
+  1. `docs/data.js` line 22 error: `548569` (2026-12-24) is officially `Houston Texans at Philadelphia Eagles` on [Westwood One](https://www.westwoodonesports.com/nfl-schedule/) and [NFL Week 16](https://www.nfl.com/schedules/2026/by-week/week-16), NOT `Baltimore Ravens at Cincinnati Bengals`.
+  2. Official NFL Pro Bowl change ([NFL Aug 27, 2026 announcement](https://www.nfl.com/news/nfl-elevates-pro-bowl-selection-game-s-will-cease-being-contested)): AFC–NFC Pro Bowl game is no longer staged starting in 2026–27, creating a **13-day zero-game core window (`Mon Feb 1 – Sat Feb 13, 2027`)** between AFC/NFC Championship Sunday (`Jan 31, 2027`) and Super Bowl LXI (`Feb 14, 2027`), before `Mon Feb 15 – Thu Feb 18, 2027` (4 days) and MLB Spring Training opening `Fri Feb 19, 2027`.
+  3. Official duration sources exist on `mlb.com` ([2h 38m / 158 min 2025 9-inning avg](https://www.mlb.com/news/mlb-average-game-time-under-three-hours-third-straight-year)), `operations.nfl.com` ([13-min halftime, 60-min regulation](https://operations.nfl.com/game-operations-logistics/preparation-safety/game-and-stadium-prep)), and `ncaa.org` ([20-min halftime](https://www.ncaa.org/news/2018/3/2/change-to-football-s-kickoff-rule-recommended.aspx)).
+
