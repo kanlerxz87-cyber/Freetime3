@@ -10,7 +10,7 @@ This session is the **final integration session** (repo was empty except README;
 | 1 | Verify official schedules (MLB/NFL/NCAAF/Westwood One) + durations | needs review | arena-f23a77a4 | `data/verified-schedules.json` |
 | 2 | Compute free vacation windows 2027–2029 | needs review | arena-f23a77a4 | `data/verified-schedules.json`, site pages |
 | 3 | Build GitHub Pages site (landing + subpages + scoreboard) | done | arena-f23a77a4 | `site/`, `index.html` |
-| 4 | PR to main + merge + confirm Pages deploy | in progress | arena-f23a77a4 | — |
+| 4 | PR to main + merge + confirm Pages deploy | done | arena-f23a77a4 / arena-9000e9d9 | #1, #2, #3, #4 |
 
 ## Verification log (2026-11-25)
 - MLB 2026: Opening Night 2026-03-25 (NYY@SF), Opening Day 2026-03-26, regular ends 2026-09-27, postseason 2026-09-29→2026-10-31 — [MLB press release](https://www.mlb.com/press-release/press-release-mlb-announces-2026-regular-season-schedule), [USA Today postseason](https://www.usatoday.com/story/sports/mlb/2026/09/23/mlb-playoffs-schedule-2026-tv-channels-how-to-watch-stream/91901872007/)
@@ -38,7 +38,7 @@ This session is the **final integration session** (repo was empty except README;
 - Checked official [MLB release](https://www.mlb.com/news/mlb-2027-schedule-released) and [sample API rows](https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2027-03-25&endDate=2027-03-25); the site links returned rows to the official query. The full live feed is not manually audited row by row.
 - Compared the imported [Westwood One current listings](https://www.westwoodonesports.com/nfl-schedule/) and dated [49ers schedule](https://www.49ers.com/schedule/2026/) against official listings. Network airtime and kickoff are separate for shared games. Week 18 49ers date was TBD.
 - [NFL dates](https://www.nfl.com/news/2026-27-national-football-league-important-dates) and [Brewers spring schedule](https://www.mlb.com/press-release/press-release-brewers-announce-2027-spring-training-schedule) bound a short 2027 lead, not verified radio silence. Review page tracks missing league/broadcast data and uncertain reception.
-- Rebase encountered add/add and content conflicts when the parallel integration landed. Preserved its board, README and site; the supplemental dashboard is at `/Freetime3/docs/`. No Pages source change is needed.
+- Rebase encountered add/add and content conflicts when the parallel integration landed. Preserved its board, README and site; the supplemental dashboard remains in `docs/`. At that time no Pages source change was requested; the later final integration updated the root landing page and Pages workflow.
 - Request for the root site's owner: retract the verified February 15–March 23 window. The official spring opener above already conflicts on February 19. Update root navigation to point at the spring-aware planner; root files were not changed by this session.
 
 - Supplemental integration PR: [#2](https://github.com/kanlerxz87-cyber/Freetime3/pull/2). See the PR timeline for the merge result.
@@ -68,4 +68,7 @@ This session is the **final integration session** (repo was empty except README;
 - Actual local station availability and radio end times for an Outer Sunset 94122 standard receiver.
 - Official average durations and minute-level intervals. No date can be marked all-sports free until all included sources are complete; blank is not free.
 
-- PR/deployment status will be recorded after this branch is published.
+- **PR #3** [Integrate verified Bay Area sports vacation dashboard](https://github.com/kanlerxz87-cyber/Freetime3/pull/3) was merged on 2026-11-25 (merge commit `19685993b0e00abcf988a459d5e42872c1294fd4`). Build and Pages deployment workflow run [45628680380](https://github.com/kanlerxz87-cyber/Freetime3/actions/runs/45628680380) succeeded.
+- **PR #4** [Add official references to remaining review flags](https://github.com/kanlerxz87-cyber/Freetime3/pull/4) was merged on 2026-11-25 (merge commit `902a888997c27a73d0a9a1de8b16e2fc97b1f3ea`). Build and Pages deployment workflow run [45628952837](https://github.com/kanlerxz87-cyber/Freetime3/actions/runs/45628952837) succeeded.
+- Live GitHub Pages URL: https://kanlerxz87-cyber.github.io/Freetime3/ (Pages reports `status: built`; live page was fetched after deploy and displayed the official MLB feed result for the selected date).
+- All-sports schedule gaps remain `needs review` and are published under the on-site Flagged for Review page; they do not block publication.
