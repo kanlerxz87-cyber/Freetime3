@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schedule Tables - Freetime3</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header><div class="wrap"><h1>Schedule Tables</h1><div class="sub">Verified schedule rows from official sources. Unverified fields are blank and flagged. ESTIMATED rows are clearly labeled and not official schedules.</div></div></header>
+<nav><div class="wrap">
+  <a href="index.html">Executive Summary</a><a href="calendar.html">Calendar / Scoreboard</a><a class="active" href="schedules.html">Schedule Tables</a><a href="radio.html">SF Radio / Broadcasts</a><a href="sources.html">Sources & Verification</a><a href="flagged.html">Flagged for Review</a>
+</div></nav>
+<div class="wrap">
+  <div class="notice warn mb"><strong>Completeness note:</strong> This table includes verified 2026 rows loaded in this repository for 49ers, Stanford, Cal, and Westwood One NFL national broadcasts. Full all-MLB (30 teams, every game) and all-NFL (every game) per-game transcription for 2026–2028 is <strong>not fully transcribed here</strong> because MLB.com/NFL.com schedules are dynamic and large; official source links are provided. No per-game rows were fabricated. See <a href="flagged.html">Flagged for Review</a>.</div>
+
+  <div class="card mb">
+    <div class="toolbar">
+      <label>Category<select id="catFilter"><option value="">All</option></select></label>
+      <label>Status<select id="statusFilter"><option value="">All</option><option>SCHEDULED</option><option>FINAL</option><option>TBD</option><option>BYE</option></select></label>
+      <label>Search<input id="q" type="search" placeholder="opponent, team, venue"></label>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Date</th><th>Time PT</th><th>Category</th><th>Priority</th><th>Matchup / Event</th><th>Venue</th><th>Status</th><th>Broadcast</th><th>Est?</th><th>Official source</th><th>Notes</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <div class="small muted mt" id="count"></div>
+  </div>
+
+  <div class="card mb">
+    <h2>2027–2029 Season Windows (ESTIMATED — not official per-game schedules)</h2>
+    <div class="notice danger mb"><strong>ESTIMATED ONLY.</strong> These windows are planning estimates based on typical league calendars. Official per-game schedules for 2027–2029 were not fully released/verified at generation time. Do not treat as official schedules.</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Year</th><th>League/Scope</th><th>Estimated conflict window</th><th>Est. clear window for vacation planning</th><th>Status</th><th>Official basis</th></tr></thead>
+        <tbody>
+          <tr><td>2027</td><td>MLB (all 30 teams, preseason+regular+postseason)</td><td>~Late Feb 2027 (spring training) – ~Early Nov 2027 (postseason end)</td><td>No reliable 1+ week zero-conflict window during this span</td><td><span class="pill est">ESTIMATED</span></td><td><a href="https://www.mlb.com/schedule" target="_blank">MLB.com</a></td></tr>
+          <tr><td>2027</td><td>NFL (all games, preseason+regular+postseason incl. 49ers)</td><td>~Early Aug 2027 – ~Mid Feb 2028 (Super Bowl window)</td><td>No reliable 1+ week zero-conflict window during this span</td><td><span class="pill est">ESTIMATED</span></td><td><a href="https://operations.nfl.com/gameday/nfl-schedule/" target="_blank">NFL Operations</a></td></tr>
+          <tr><td>2027</td><td>Stanford / Cal NCAAF</td><td>~Late Aug 2027 – ~Early Dec 2027 (regular season); bowls possible later</td><td>Outside season only; still conflicts with MLB/NFL</td><td><span class="pill est">ESTIMATED</span></td><td><a href="https://gostanford.com/sports/football/schedule" target="_blank">Stanford</a>, <a href="https://calbears.com/sports/football/schedule" target="_blank">Cal</a></td></tr>
+          <tr><td>2027</td><td><strong>Best combined vacation candidate</strong></td><td>Most of year has MLB/NFL/NCAAF overlap</td><td><strong>~Feb 15–Feb 21, 2027 (ESTIMATED, very short)</strong> — after Super Bowl LXI, before likely MLB spring training. Must verify official dates.</td><td><span class="pill est">ESTIMATED</span> <span class="pill warn">Unverified</span></td><td><a href="https://operations.nfl.com/gameday/nfl-schedule/" target="_blank">NFL</a>, <a href="https://www.mlb.com/schedule" target="_blank">MLB</a></td></tr>
+          <tr><td>2028</td><td>MLB/NFL/NCAAF combined</td><td>~Late Feb 2028 – ~Mid Feb 2029 with overlaps</td><td><strong>~Feb 14–Feb 20, 2028 (ESTIMATED, very short)</strong> — verify.</td><td><span class="pill est">ESTIMATED</span> <span class="pill warn">Unverified</span></td><td><a href="https://operations.nfl.com/gameday/nfl-schedule/" target="_blank">NFL</a>, <a href="https://www.mlb.com/schedule" target="_blank">MLB</a></td></tr>
+          <tr><td>2029</td><td>MLB/NFL/NCAAF combined</td><td>~Late Feb 2029 – ~Mid Feb 2030 with overlaps</td><td><strong>~Feb 12–Feb 18, 2029 (ESTIMATED, very short)</strong> — verify.</td><td><span class="pill est">ESTIMATED</span> <span class="pill warn">Unverified</span></td><td><a href="https://operations.nfl.com/gameday/nfl-schedule/" target="_blank">NFL</a>, <a href="https://www.mlb.com/schedule" target="_blank">MLB</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>All-MLB / All-NFL Coverage Notes</h2>
+    <p>The user requested all 30 MLB teams and all NFL games. Official schedule sources are linked below. This repository does <strong>not</strong> fabricate per-game rows. For planning, treat <strong>any day during MLB season as potentially conflicted</strong> unless you verify no games are scheduled across all tracked sources.</p>
+    <ul class="clean">
+      <li><a href="https://www.mlb.com/schedule" target="_blank">MLB Official Schedule (all teams)</a> — official source for all MLB games.</li>
+      <li><a href="https://www.mlb.com/giants/schedule" target="_blank">SF Giants Official Schedule</a> — HIGH PRIORITY.</li>
+      <li><a href="https://www.mlb.com/athletics/schedule" target="_blank">Athletics Official Schedule</a> — HIGH PRIORITY.</li>
+      <li><a href="https://www.nfl.com/schedules/" target="_blank">NFL Official Schedule (all games)</a> — official source for all NFL games.</li>
+      <li><a href="https://www.49ers.com/schedule/" target="_blank">49ers Official Schedule</a> — HIGH PRIORITY.</li>
+      <li><a href="https://www.westwoodonesports.com/nfl-schedule/" target="_blank">Westwood One NFL Schedule</a> — national radio broadcasts.</li>
+    </ul>
+  </div>
+</div>
+<div class="footer">Freetime3 · Schedule Tables</div>
+<script src="assets/data.js"></script>
+<script>
+(function(){
+  const data=window.FREETIME_DATA;
+  const rows=data.events.slice().sort((a,b)=> (a.date||'').localeCompare(b.date||'') || (a.timePT||'99:99').localeCompare(b.timePT||'99:99'));
+  const catFilter=document.getElementById('catFilter');
+  const statusFilter=document.getElementById('statusFilter');
+  const q=document.getElementById('q');
+  const tbody=document.getElementById('rows');
+  const count=document.getElementById('count');
+  [...new Set(rows.map(r=>r.category))].sort().forEach(c=>{const o=document.createElement('option'); o.value=c; o.textContent=c; catFilter.appendChild(o);});
+  function render(){
+    const cat=catFilter.value, st=statusFilter.value, qq=q.value.toLowerCase().trim();
+    const filtered=rows.filter(r=> (!cat||r.category===cat) && (!st||r.status===st) && (!qq || JSON.stringify(r).toLowerCase().includes(qq)));
+    tbody.innerHTML=filtered.map(r=>`<tr>
+      <td>${r.date||''}</td>
+      <td>${r.timePT||'<span class="muted">TBD</span>'}</td>
+      <td>${r.category||''}</td>
+      <td><span class="pill high">${r.priority||''}</span></td>
+      <td><strong>${r.team||''}</strong><div class="small">${r.opponent||''}</div></td>
+      <td class="small">${r.venue||''}</td>
+      <td>${r.status||''}</td>
+      <td class="small">${r.broadcast||'<span class="muted">Unverified</span>'}</td>
+      <td>${r.estimate?'<span class="pill est">EST</span>':'<span class="pill ok">Verified</span>'}</td>
+      <td><a href="${r.sourceUrl}" target="_blank" rel="noopener">source</a></td>
+      <td class="small muted">${r.notes||''}</td>
+    </tr>`).join('');
+    count.textContent=filtered.length+' rows shown of '+rows.length+' loaded verified/flagged rows.';
+  }
+  catFilter.onchange=statusFilter.onchange=q.oninput=render;
+  render();
+})();
+</script>
+</body>
+</html>

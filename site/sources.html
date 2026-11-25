@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sources & Verification - Freetime3</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header><div class="wrap"><h1>Sources & Verification</h1><div class="sub">Official sources used for verification. Every schedule row in the data files should trace back to one of these sources or be flagged.</div></div></header>
+<nav><div class="wrap">
+  <a href="index.html">Executive Summary</a><a href="calendar.html">Calendar / Scoreboard</a><a href="schedules.html">Schedule Tables</a><a href="radio.html">SF Radio / Broadcasts</a><a class="active" href="sources.html">Sources & Verification</a><a href="flagged.html">Flagged for Review</a>
+</div></nav>
+<div class="wrap">
+  <div class="card mb">
+    <h2>Verification Rules</h2>
+    <ul class="clean">
+      <li>Every table row must have a source link to an official site.</li>
+      <li>If a value can't be confirmed from an official source, leave it blank and flag it as unverified.</li>
+      <li>Never infer or fill in values.</li>
+      <li>Future schedules not officially released are marked <span class="pill est">ESTIMATED</span> and are not official game schedules.</li>
+      <li>Generated: 2026-11-25. Sources accessed on 2026-11-25 unless noted.</li>
+    </ul>
+  </div>
+  <div class="card mb">
+    <h2>Official Sources</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>ID</th><th>Name</th><th>Type</th><th>URL</th><th>Used for</th></tr></thead>
+        <tbody id="srcRows"></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Verification Log (Summary)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Area</th><th>What was checked</th><th>Result</th><th>Evidence</th></tr></thead>
+        <tbody>
+          <tr><td>49ers 2026 schedule</td><td>Dates, opponents, PT times, venue, broadcast, status</td><td><span class="pill ok">Verified</span></td><td><a href="https://www.49ers.com/schedule/" target="_blank">49ers.com schedule</a> (accessed 2026-11-25)</td></tr>
+          <tr><td>Stanford 2026 football schedule</td><td>Dates, opponents, PT times, venue, broadcast/status</td><td><span class="pill ok">Verified</span></td><td><a href="https://gostanford.com/sports/football/schedule" target="_blank">GoStanford schedule</a></td></tr>
+          <tr><td>Cal 2026 football schedule</td><td>Dates, opponents, times, venue, results/status</td><td><span class="pill warn">Partial</span></td><td><a href="https://calbears.com/sports/football/schedule" target="_blank">CalBears schedule</a>. Some broadcast/time fields unconfirmed and flagged.</td></tr>
+          <tr><td>Westwood One NFL national radio</td><td>Upcoming listed games, ET times converted to PT</td><td><span class="pill ok">Verified (listed games)</span></td><td><a href="https://www.westwoodonesports.com/nfl-schedule/" target="_blank">Westwood One Sports NFL Schedule</a></td></tr>
+          <tr><td>MLB Giants 2026 full per-game</td><td>All games</td><td><span class="pill warn">Not fully transcribed</span></td><td><a href="https://www.mlb.com/giants/schedule" target="_blank">MLB.com Giants</a>. Dynamic page; no fabricated rows added.</td></tr>
+          <tr><td>MLB Athletics 2026 full per-game</td><td>All games</td><td><span class="pill warn">Not fully transcribed</span></td><td><a href="https://www.mlb.com/athletics/schedule" target="_blank">MLB.com Athletics</a>. Dynamic page; no fabricated rows added.</td></tr>
+          <tr><td>All 30 MLB teams / all games 2026-2028</td><td>Every game row</td><td><span class="pill bad">Not verified/transcribed</span></td><td><a href="https://www.mlb.com/schedule" target="_blank">MLB.com</a>. Flagged; no fabrication.</td></tr>
+          <tr><td>All NFL games 2026-2029</td><td>Every game row</td><td><span class="pill warn">Partial/season-level</span></td><td><a href="https://www.nfl.com/schedules/" target="_blank">NFL.com</a>. 49ers verified; league-wide full row transcription incomplete.</td></tr>
+          <tr><td>2027-2029 per-game schedules</td><td>MLB/NFL/NCAAF</td><td><span class="pill est">ESTIMATED / Unreleased</span></td><td>Official season-structure sources used for window estimates only.</td></tr>
+          <tr><td>SF AM/FM carriage in 94122</td><td>Station receivability and per-game carriage</td><td><span class="pill warn">Needs manual verification</span></td><td><a href="https://www.westwoodonesports.com/station-finder" target="_blank">WW1 Station Finder</a>, <a href="https://www.thesportsleader.com/" target="_blank">KNBR</a>, <a href="https://www.957thegame.com/" target="_blank">95.7 The Game</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="footer">Freetime3 · Sources & Verification</div>
+<script src="assets/data.js"></script>
+<script>
+(function(){
+  const rows=window.FREETIME_DATA.sources;
+  document.getElementById('srcRows').innerHTML=rows.map(s=>`<tr><td><code>${s.id}</code></td><td>${s.name}</td><td>${s.type}</td><td><a href="${s.url}" target="_blank" rel="noopener">${s.url}</a></td><td class="small muted">See verification log / data rows</td></tr>`).join('');
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flagged for Review - Freetime3</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header><div class="wrap"><h1>Flagged for Review</h1><div class="sub">Unverified, estimated, incomplete, or irregular items. These do not block publication; they require manual review against official sources.</div></div></header>
+<nav><div class="wrap">
+  <a href="index.html">Executive Summary</a><a href="calendar.html">Calendar / Scoreboard</a><a href="schedules.html">Schedule Tables</a><a href="radio.html">SF Radio / Broadcasts</a><a href="sources.html">Sources & Verification</a><a class="active" href="flagged.html">Flagged for Review</a>
+</div></nav>
+<div class="wrap">
+  <div class="notice danger mb"><strong>Do not treat flagged items as verified.</strong> Blank/unverified values were intentionally left blank. Estimated windows are planning aids only.</div>
+  <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Severity</th><th>Item</th><th>Why flagged</th><th>What to verify</th><th>Official source link</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pill bad">High</span></td><td>All 30 MLB teams, every game, 2027-2028 (and 2026 full transcription)</td><td>User requested every MLB game; full per-game official transcription was not completed in this session. MLB.com schedule pages are dynamic and large. No rows were fabricated.</td><td>Extract/verify every game from official MLB schedule for each team/season.</td><td><a href="https://www.mlb.com/schedule" target="_blank">MLB Schedule</a></td><td><span class="pill warn">Unverified / Incomplete</span></td></tr>
+          <tr><td><span class="pill bad">High</span></td><td>All NFL games, every game, 2026-2029</td><td>Only 49ers 2026 and selected Westwood One national windows were loaded as verified rows. Complete all-NFL per-game dataset not transcribed.</td><td>Verify every NFL game from official NFL schedule.</td><td><a href="https://www.nfl.com/schedules/" target="_blank">NFL Schedules</a></td><td><span class="pill warn">Incomplete</span></td></tr>
+          <tr><td><span class="pill bad">High</span></td><td>2027-2029 best vacation windows</td><td>No official 2027-2029 per-game schedules for MLB/NFL/NCAAF were fully released/loaded. Windows given are ESTIMATED from season structure; under strict conflict definition there may be no 1-3 week zero-conflict window.</td><td>Confirm official MLB Opening Day/spring training, NFL schedule release/Super Bowl date, NCAAF kickoff dates for each year.</td><td><a href="https://www.mlb.com/schedule" target="_blank">MLB</a>, <a href="https://operations.nfl.com/gameday/nfl-schedule/" target="_blank">NFL Ops</a></td><td><span class="pill est">ESTIMATED</span></td></tr>
+          <tr><td><span class="pill warn">Medium</span></td><td>SF Giants 2026 full schedule rows</td><td>Official source linked but per-game rows not fully transcribed into data.js.</td><td>Transcribe/verify from MLB.com Giants schedule.</td><td><a href="https://www.mlb.com/giants/schedule" target="_blank">Giants Schedule</a></td><td><span class="pill warn">Incomplete</span></td></tr>
+          <tr><td><span class="pill warn">Medium</span></td><td>Athletics 2026 full schedule rows</td><td>Official source linked but per-game rows not fully transcribed.</td><td>Transcribe/verify from MLB.com Athletics schedule.</td><td><a href="https://www.mlb.com/athletics/schedule" target="_blank">Athletics Schedule</a></td><td><span class="pill warn">Incomplete</span></td></tr>
+          <tr><td><span class="pill warn">Medium</span></td><td>Cal broadcast/time fields (some games)</td><td>Some Cal games had broadcast/TBD time not confidently captured from fetched page text.</td><td>Verify each game's TV/radio/time on CalBears.com game page.</td><td><a href="https://calbears.com/sports/football/schedule" target="_blank">Cal Schedule</a></td><td><span class="pill warn">Unverified fields</span></td></tr>
+          <tr><td><span class="pill warn">Medium</span></td><td>49ers Week 18 exact date/time</td><td>NFL Week 18 is flex/TBD by design.</td><td>Check NFL/49ers schedule when finalized.</td><td><a href="https://www.49ers.com/schedule/" target="_blank">49ers Schedule</a></td><td><span class="pill warn">TBD</span></td></tr>
+          <tr><td><span class="pill warn">Medium</span></td><td>Westwood One affiliate AM/FM reception in 94122</td><td>National schedule is verified; local affiliate over-the-air receivability in Outer Sunset is not confirmed.</td><td>Use Station Finder and confirm local station reception.</td><td><a href="https://www.westwoodonesports.com/station-finder" target="_blank">WW1 Station Finder</a></td><td><span class="pill warn">Unverified</span></td></tr>
+          <tr><td><span class="pill warn">Medium</span></td><td>KNBR / 95.7 The Game / A's radio AM/FM carriage</td><td>Station identities known, but per-game live carriage and 94122 AM/FM receivability not fully verified.</td><td>Confirm current rights and game-by-game listings.</td><td><a href="https://www.thesportsleader.com/" target="_blank">KNBR</a>, <a href="https://www.957thegame.com/" target="_blank">95.7 The Game</a></td><td><span class="pill warn">Unverified</span></td></tr>
+          <tr><td><span class="pill warn">Medium</span></td><td>Other SF Bay Area AM/FM live sports broadcasts</td><td>User asked to look for other live over-the-radio sports in SF Bay Area. A comprehensive, verified inventory was not completed.</td><td>Audit local AM/FM station schedules for live sports carriage.</td><td><a href="https://www.westwoodonesports.com/station-finder" target="_blank">WW1 Finder</a></td><td><span class="pill warn">Incomplete</span></td></tr>
+          <tr><td><span class="pill est">Info</span></td><td>Game duration estimates</td><td>MLB 165 min, NFL 195 min, NCAAF 210 min are planning estimates, not official.</td><td>Replace with observed/official durations if needed.</td><td><a href="https://www.mlb.com/" target="_blank">MLB</a>, <a href="https://www.nfl.com/" target="_blank">NFL</a></td><td><span class="pill est">ESTIMATED</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="footer">Freetime3 · Flagged for Review</div>
+</body>
+</html>
