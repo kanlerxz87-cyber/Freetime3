@@ -7,8 +7,8 @@ This session is the **final integration session** (repo was empty except README;
 
 | # | Task | Status | Owner | Files |
 |---|------|--------|-------|-------|
-| 1 | Verify official schedules (MLB/NFL/NCAAF/Westwood One) + durations | done | arena-f23a77a4 | `data/verified-schedules.json` |
-| 2 | Compute free vacation windows 2027–2029 | done | arena-f23a77a4 | `data/verified-schedules.json`, site pages |
+| 1 | Verify official schedules (MLB/NFL/NCAAF/Westwood One) + durations | needs review | arena-f23a77a4 | `data/verified-schedules.json` |
+| 2 | Compute free vacation windows 2027–2029 | needs review | arena-f23a77a4 | `data/verified-schedules.json`, site pages |
 | 3 | Build GitHub Pages site (landing + subpages + scoreboard) | done | arena-f23a77a4 | `site/`, `index.html` |
 | 4 | PR to main + merge + confirm Pages deploy | in progress | arena-f23a77a4 | — |
 
@@ -18,8 +18,8 @@ This session is the **final integration session** (repo was empty except README;
 - NFL 2026: Kickoff 2026-09-09 (NE@SEA), Week 18 ends 2027-01-10, Super Bowl LXI 2027-02-14 SoFi — [NFL 2026 release](https://media.nfl.com/football-information/2026/news/2026-nfl-schedule-announced). 49ers preseason Aug 13/20/27 — [49ers.com](https://www.49ers.com/news/49ers-finalize-2026-preseason-dates-and-times)
 - Stanford 2026 (12 games, Aug 29–Nov 28) — [gostanford.com schedule](https://gostanford.com/sports/football/schedule); Cal 2026 (12 games, Sep 5–Nov 28) — [calbears.com schedule](https://calbears.com/sports/football/schedule/2026)
 - Westwood One NFL national radio (TNF/SNF/MNF + playoffs + Super Bowl) — [westwoodonesports.com/nfl-schedule](https://www.westwoodonesports.com/nfl-schedule/)
-- Durations: MLB 2h38m (2025 avg) — [Lines.com](https://www.lines.com/guides/how-long-is-baseball-game/1523); NFL 3h12m — [HuffPost](https://huffsports.com/football/how-long-is-an-nfl-game/)
-- 2028/2029 MLB+NFL+NCAAF: **NOT RELEASED** as of 2026-11-25 → all marked ESTIMATED on site.
+- Duration values from earlier work were based on third-party publications and are not retained as verified official facts; they were removed from the active data file and flagged as unverified.
+- 2028/2029 MLB+NFL+NCAAF: **NOT RELEASED** as of 2026-11-25. An earlier implementation inferred estimated ranges and is superseded; the corrected source dashboard leaves these dates blank and marks coverage unverified.
 
 ## Irregularities flagged
 - 2026 NFL Kickoff is Wednesday Sep 9 (not Thursday) due to Melbourne game Sep 10 — verified, not an error.
@@ -47,23 +47,25 @@ This session is the **final integration session** (repo was empty except README;
 
 | Task | Status | Owner | Scope |
 |---|---|---|---|
-| Verify current root vacation recommendation, add a source-first dashboard and Pages build/deploy checks | in progress | 9000e9d9 | `COORDINATION.md`, `README.md`, `index.html`, `assets/`, `.github/workflows/pages.yml`, `.nojekyll` |
+| Correct the root vacation-window claim, integrate a source-first dashboard, and add Pages build/deploy checks | needs review | 9000e9d9 | `COORDINATION.md`, `README.md`, `index.html`, `source-dashboard.html`, `assets/`, `.github/workflows/pages.yml`, `.nojekyll`, category redirect pages, `data/verified-schedules.json` |
 
-- Identified a conflict with main after earlier integration PRs merged while this branch was active. Preserving the existing `site/`, `docs/`, event data, page set and source history; this session will add to, not erase, those outputs.
-- Important correction queued: root executive text labels Feb 15–Mar 23, 2027 “verified” despite the official 2027 MLB Spring Training release scheduling game activity from Feb 19. The current evidence does not support claiming a multi-week all-sports / radio-free interval. The root recommendation must be corrected before publication.
-- Official MLB API and schedule references reviewed by this session are recorded below after integration.
+### Changes and verification
 
-## Current Arena session — 9000e9d9
+- Main advanced while this branch was active with merged PRs #1 and #2. Rebase conflicts were resolved by preserving the existing `site/`, `docs/`, model/tests and source history. The existing root content was corrected rather than discarded; category URLs now redirect into the source-first dashboard sections.
+- **Correction:** the earlier root claim “verified free Feb 15–Mar 23, 2027” was wrong. MLB's official 2027 Spring Training announcement says play begins Feb 19 and includes scheduled exhibitions. The NFL source confirms Super Bowl LXI on Feb 14; that does not prove a conflict-free multi-week radio window. The current site gives no certified 1/2/3-week vacation window.
+- 2027 MLB regular-season schedule: [official Rays/MLB announcement](https://www.mlb.com/press-release/rays-announce-2027-regular-season-schedule) says all 30 clubs released schedules and notes schedules subject to change; [official Spring Training announcement](https://www.mlb.com/press-release/press-release-mlb-announces-2027-spring-training-schedule) confirms Feb 19 opening and additional exhibition dates to be added.
+- Official MLB data: [StatsAPI schedule endpoint](https://statsapi.mlb.com/api/v1/schedule), [official game-type reference](https://statsapi.mlb.com/api/v1/gameTypes), and [2027-03-25 example query](https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2027-03-25&gameTypes=S%2CR%2CF%2CD%2CL%2CW%2CC%2CP%2CA%2CI%2CE), which returned 14 games. Dashboard queries the official feed by selected month for 2026–2027; source failure leaves status unverified. All 30 MLB club links are present; Giants/Athletics are highlighted.
+- NFL source reviewed: [official 2026–27 important dates](https://www.nfl.com/news/2026-27-national-football-league-important-dates). Only confirmed 2027 postseason milestones are reported; a full 2027 NFL regular-season slate is not claimed.
+- Cal's 2027 opponent announcement is partial: [official Cal release](https://calbears.com/news/2026/9/16/california-football-announces-2027-conference-opponents). Full 2027 Stanford/Cal and 49ers slates are not verified in this integration.
+- Radio sources reviewed: [Westwood One NFL schedule](https://www.westwoodonesports.com/nfl-schedule/) and [KNBR weekly programming](https://www.thesportsleader.com/shows). Dynamic schedule pages do not establish game-by-game AM/FM carriage or reception at Outer Sunset 94122.
+- `data/verified-schedules.json` now contains only schedule-status/source facts, with `null` for unverified dates and no inferred season ranges or average-duration numbers. Unsupported third-party duration assumptions were removed from this official-sources record.
+- Checks passed: `node --check assets/app.js`; HTML anchor/local asset validation; JSON parsing/status checks; 30-team count; `git diff --check`; local preview HTTP 200. Pages workflow validates anchors/assets and packages root HTML plus assets.
 
-| Task | Status | Owner | Scope |
-|---|---|---|---|
-| Correct the root vacation-window claim, add a source-first dashboard and Pages build/deploy checks | in progress | 9000e9d9 | `COORDINATION.md`, `README.md`, `index.html`, `source-dashboard.html`, `assets/`, `.github/workflows/pages.yml`, `.nojekyll`, `vacation-windows.html`, `executive-summary.html`, `data/verified-schedules.json` |
+### Remaining review flags (also shown on site)
 
-- Main advanced while this branch was active, including merged PRs #1 and #2. Rebase conflict resolution preserves all existing pages, `site/`, `docs/`, data, model/tests, and coordination history. The new dashboard is placed at `source-dashboard.html` rather than replacing the existing home.
-- The root site claims Feb 15–Mar 23, 2027 is a “verified” multi-week free window. This session checked MLB's official 2027 Spring Training release, which schedules play starting Feb 19, so that all-sports-free claim is not supportable. Correcting the claimed window and any derived vacation advice is part of integration.
-- MLB official schedule source verified: [2027 all-club regular-season release](https://www.mlb.com/press-release/rays-announce-2027-regular-season-schedule); [2027 Spring Training release](https://www.mlb.com/press-release/press-release-mlb-announces-2027-spring-training-schedule). The latter confirms Spring Training begins February 19 and that additional exhibitions were to be added.
-- MLB StatsAPI sources verified: [schedule endpoint](https://statsapi.mlb.com/api/v1/schedule), [game-type reference](https://statsapi.mlb.com/api/v1/gameTypes), and [March 25, 2027 query](https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2027-03-25&gameTypes=S%2CR%2CF%2CD%2CL%2CW%2CC%2CP%2CA%2CI%2CE), which returned 14 games. Runtime calendar loads official MLB game listings for 2026–2027 and fails closed when the browser cannot retrieve the feed.
-- NFL schedule research: [official 2026–27 important dates](https://www.nfl.com/news/2026-27-national-football-league-important-dates); full 2027 NFL regular-season schedule, 2027–29 49ers/Stanford/Cal schedules and full future radio carriage are not verified here.
-- Station evidence reviewed: [Westwood One NFL schedule](https://www.westwoodonesports.com/nfl-schedule/) and [KNBR weekly programming](https://www.thesportsleader.com/shows). Dynamic listings do not prove every game's local AM/FM carriage or actual reception in 94122.
-- Website checks before integration: Node syntax check and Python HTML/asset/anchor checks passed; 30 MLB club records present. The supported static site workflow validates local links, packages the root site, and deploys Pages.
-- Full all-sports free windows remain unverified. No game-duration averages or radio end times are used to mark a minute free; gaps remain on the site's Flagged for Review list.
+- Complete 2027–2029 NFL/49ers/Stanford/Cal event schedules and future Westwood One local carriage.
+- Complete 2028–2029 MLB schedules, future postseason and specials; only current official releases are linked.
+- Actual local station availability and radio end times for an Outer Sunset 94122 standard receiver.
+- Official average durations and minute-level intervals. No date can be marked all-sports free until all included sources are complete; blank is not free.
+
+- PR/deployment status will be recorded after this branch is published.

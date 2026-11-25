@@ -18,8 +18,9 @@ The planner does not treat missing data as free. It leaves minutes/end-times unv
 - `radio.html` — Bay Area radio directory
 - `methodology.html` — definition and duration assumptions
 - `flagged.html` — unverified items and irregularities
-- `source-dashboard.html` — source-first view with direct MLB feed by selected day and a stricter all-sports availability status
-- `docs/` — supplemental live MLB schedule view
+- `source-dashboard.html` — backwards-compatible redirect to the source-first landing dashboard
+- Category links (`executive-summary.html`, `vacation-windows.html`, `scoreboard.html`, `schedules.html`, `radio.html`, `methodology.html`, `flagged.html`) redirect to the corresponding current dashboard section so older pages cannot show superseded free-window claims
+- `docs/` — supplemental live MLB schedule view retained in the repository
 
 ## Verified official references
 
