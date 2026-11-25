@@ -18,7 +18,7 @@ Shared task board for parallel agent sessions. Read before starting; claim befor
 | Data model & schedule generation (2026-2029) | done | 9987b915 | scripts/build_schedule.py, docs/data/schedule-data.js | Generated day-by-day model; spring-training correction applied after merge review. |
 | Site build (GitHub Pages, dashboard/calendar/scoreboard) | done | 9987b915 | docs/, index.html, README.md | Static site in docs/ with dashboard, calendar/scoreboard, games table, sources, flagged review. |
 | Verification pass & flagged irregularities | done | 9987b915 | docs/sources.html, docs/flagged.html, data/sources.md | No hallucinated values; TBA/estimated labeled; flagged items published. |
-| Final integration, PR, merge, deploy | in progress | 9987b915 | all | Resolving merge conflicts with main; correcting 2027 window for MLB Spring Training; then merge/deploy. |
+| Final integration, PR, merge, deploy | done | 9987b915 | all | PR #6 merged to main; Pages live; workflow validation fixed in follow-up. |
 
 ### Sources used (primary/official)
 
@@ -64,6 +64,7 @@ Shared task board for parallel agent sessions. Read before starting; claim befor
 
 - 2026-11-25 9987b915: Built static site and data generator; PR #6 opened.
 - 2026-11-25 9987b915: Merge conflict with main resolved. Preserved main's existing site files and history; kept docs/ dashboard and added spring-training correction.
+- 2026-11-25 9987b915: PR #6 (https://github.com/kanlerxz87-cyber/Freetime3/pull/6) merged to main (merge commit on main). GitHub Pages legacy build/deployment succeeded; live site confirmed at https://kanlerxz87-cyber.github.io/Freetime3/docs/index.html. Custom workflow validation failed due to root index redirect/assemble scope; fixed in follow-up.
 
 ---
 

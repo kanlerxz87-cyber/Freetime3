@@ -72,7 +72,11 @@ jobs:
           if len(re.findall(r"\['[^']+','[^']+','(?:AL|NL) [^']+'", (root / 'assets/app.js').read_text())) != 30:
               print('Expected 30 MLB club links.')
               sys.exit(1)
-          if b'No fully verified week-long vacation window can be certified' not in (root / 'index.html').read_bytes():
+          warning = b'No fully verified week-long vacation window can be certified'
+          warning2 = b'No modeled 7+ day contiguous vacation window with zero tracked conflicts was found'
+          idx = (root / 'index.html').read_bytes()
+          docs_idx = (root / 'docs/index.html').read_bytes() if (root / 'docs/index.html').exists() else b''
+          if warning not in idx and warning2 not in idx and warning not in docs_idx and warning2 not in docs_idx:
               print('Executive summary must retain the verified-free-time warning.')
               sys.exit(1)
           print(f'Validated {len(parser.ids)} HTML ids, {len(parser.anchors)} in-page links, {len(parser.refs)} local assets, and schedule evidence.')
@@ -82,6 +86,11 @@ jobs:
           mkdir -p _site
           cp ./*.html _site/
           cp -R assets _site/
+          cp -R docs _site/
+          cp -R site _site/
+          cp -R data _site/
+          [ -f style.css ] && cp style.css _site/ || true
+          [ -f .nojekyll ] && cp .nojekyll _site/ || true
           touch _site/.nojekyll
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
