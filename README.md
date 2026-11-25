@@ -1,37 +1,38 @@
-# 🏖️ Free Time Vacation — Bay Area Sports Planner
+# Free Time Vacation — Bay Area Sports Planner
 
-**Live site:** https://kanlerxz87-cyber.github.io/Freetime3/
+A source-first planner for avoiding live sports conflicts while vacationing from the San Francisco Bay Area. The project includes the original multi-page schedule/scoreboard, a supplemental live-feed planner under `docs/`, and this session's source-first dashboard at [`source-dashboard.html`](source-dashboard.html).
 
-Tells you exactly when there are **no games on the radio** — no MLB, no NFL, no Stanford/Cal football — so you can plan a vacation with zero scheduling conflicts.
+## Executive summary — read this before booking
 
-## The answer
-**Mid-February → late March is the only multi-week free window each year** (day after the Super Bowl → day before MLB Opening Day).
+**No complete, verified, week-long all-sports/radio-free vacation window can currently be certified for 2027–2029.** Do not rely on the older Feb–Mar window dates shown in historical site content without checking the corrected executive summary and flagged items. The 2027 MLB schedule includes Spring Training play beginning February 19, which invalidates the earlier claim that February 15–March 23 was a verified sports-free span. Unverified league/radio coverage remains a separate blocker even between known MLB dates.
 
-| Year | Free window | Confidence |
-|------|-------------|------------|
-| 2027 | Feb 15 – Mar 23 (37 days) | ✅ VERIFIED (official MLB + NFL) |
-| 2028 | Feb 14 – Mar 28 (44 days) | ⚠️ ESTIMATED (not released) |
-| 2029 | Feb 12 – Mar 27 (44 days) | ⚠️ ESTIMATED (not released) |
+The planner does not treat missing data as free. It leaves minutes/end-times unverified where official sources do not supply complete coverage; the generated status is not a substitute for checking the linked league, team and station schedules.
 
 ## Pages
+
 - `index.html` — landing dashboard
-- `executive-summary.html` — bottom line up front
-- `vacation-windows.html` — every 1/2/3-week trip option
-- `scoreboard.html` — day-by-day scoreboard (yesterday/today/tomorrow + month calendar)
-- `schedules.html` — verified schedule tables with official source links
-- `radio.html` — Bay Area AM/FM radio guide (KNBR, KSFO, Westwood One)
-- `methodology.html` — how "free" is defined
-- `flagged.html` — unverified items & irregularities for review
+- `executive-summary.html` — concise decision summary
+- `vacation-windows.html` — candidate window analysis and limitations
+- `scoreboard.html` — day-by-day schedule view
+- `schedules.html` — schedules and official sources
+- `radio.html` — Bay Area radio directory
+- `methodology.html` — definition and duration assumptions
+- `flagged.html` — unverified items and irregularities
+- `source-dashboard.html` — backwards-compatible redirect to the source-first landing dashboard
+- Category links (`executive-summary.html`, `vacation-windows.html`, `scoreboard.html`, `schedules.html`, `radio.html`, `methodology.html`, `flagged.html`) redirect to the corresponding current dashboard section so older pages cannot show superseded free-window claims
+- `docs/` — supplemental live MLB schedule view retained in the repository
 
-## Data
-`data/verified-schedules.json` — every date with its official source URL. Anything not confirmed by an official source is marked `ESTIMATED`, never guessed.
+## Verified official references
 
-## Sources (official)
-- MLB: https://www.mlb.com/press-release/press-release-mlb-announces-2026-regular-season-schedule · https://www.mlb.com/news/mlb-2027-schedule-released
-- NFL: https://media.nfl.com/football-information/2026/news/2026-nfl-schedule-announced
-- 49ers: https://www.49ers.com/news/49ers-finalize-2026-preseason-dates-and-times
-- Stanford: https://gostanford.com/sports/football/schedule
-- Cal: https://calbears.com/sports/football/schedule/2026
-- Westwood One: https://www.westwoodonesports.com/nfl-schedule/
+- [MLB 2027 regular-season schedule release — all 30 clubs](https://www.mlb.com/press-release/rays-announce-2027-regular-season-schedule)
+- [MLB 2027 Spring Training release](https://www.mlb.com/press-release/press-release-mlb-announces-2027-spring-training-schedule)
+- [MLB StatsAPI schedule](https://statsapi.mlb.com/api/v1/schedule) · [game types](https://statsapi.mlb.com/api/v1/gameTypes)
+- [NFL 2026–27 important dates](https://www.nfl.com/news/2026-27-national-football-league-important-dates)
+- [NFL schedules](https://www.nfl.com/schedules/)
+- [Cal 2027 conference-opponent announcement](https://calbears.com/news/2026/9/16/california-football-announces-2027-conference-opponents)
+- [Westwood One NFL schedule](https://www.westwoodonesports.com/nfl-schedule/)
+- [KNBR programming schedule](https://www.thesportsleader.com/shows)
 
-See `COORDINATION.md` for the verification log.
+## Local preview
+
+Open `index.html` or run any static HTTP server in the repository root. The live MLB view queries MLB's official StatsAPI in the browser. If that request fails, the calendar reports an unverified state and links the official source; it does not substitute guessed games.
