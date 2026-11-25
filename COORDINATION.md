@@ -1,3 +1,74 @@
+# COORDINATION.md
+
+Shared task board for parallel agent sessions. Read before starting; claim before working.
+
+## Current session — 9987b915
+
+- **Session ID**: 9987b915
+- **Branch**: `arena/9987b915-freetime3`
+- **Base**: `6429edc60fdfb4b0af5d7e80bcb181310ec3b64a` (main)
+- **Started**: 2026-11-25
+
+### Tasks
+
+| Task | Status | Owner | Files/Scope | Notes |
+|------|--------|-------|-------------|-------|
+| Repo audit & coordination setup | done | 9987b915 | COORDINATION.md | Initial claim committed. |
+| Research official schedules (MLB/NFL/NCAAF/Westwood One) | done | 9987b915 | data/sources.md, docs/data/schedule-data.js, scripts/build_schedule.py | Official sources gathered; unreleased 2027-2029 schedules marked estimated. |
+| Data model & schedule generation (2026-2029) | done | 9987b915 | scripts/build_schedule.py, docs/data/schedule-data.js | Generated day-by-day model; spring-training correction applied after merge review. |
+| Site build (GitHub Pages, dashboard/calendar/scoreboard) | done | 9987b915 | docs/, index.html, README.md | Static site in docs/ with dashboard, calendar/scoreboard, games table, sources, flagged review. |
+| Verification pass & flagged irregularities | done | 9987b915 | docs/sources.html, docs/flagged.html, data/sources.md | No hallucinated values; TBA/estimated labeled; flagged items published. |
+| Final integration, PR, merge, deploy | in progress | 9987b915 | all | Resolving merge conflicts with main; correcting 2027 window for MLB Spring Training; then merge/deploy. |
+
+### Sources used (primary/official)
+
+- MLB 2027 schedule release: https://www.mlb.com/news/mlb-2027-schedule-released (accessed 2026-11-25)
+- MLB 2027 Spring Training announcement: https://www.mlb.com/press-release/press-release-mlb-announces-2027-spring-training-schedule (accessed 2026-11-25)
+- MLB schedule hub: https://www.mlb.com/schedule (accessed 2026-11-25)
+- NFL 2026-27 important dates: https://www.nfl.com/news/2026-27-national-football-league-important-dates (accessed 2026-11-25)
+- NFL schedules: https://www.nfl.com/schedules/ (accessed 2026-11-25)
+- 49ers schedule: https://www.49ers.com/schedule/ (accessed 2026-11-25)
+- Westwood One NFL schedule: https://www.westwoodonesports.com/nfl-schedule/ (accessed 2026-11-25)
+- Westwood One station finder: https://www.westwoodonesports.com/station-finder (accessed 2026-11-25)
+- Stanford football 2026 schedule: https://gostanford.com/sports/football/schedule (accessed 2026-11-25)
+- Cal football 2026 schedule: https://calbears.com/sports/football/schedule (accessed 2026-11-25)
+- NFL Operations schedule creation: https://operations.nfl.com/gameday/nfl-schedule/creating-the-nfl-schedule/ (accessed 2026-11-25)
+- MLB postseason: https://www.mlb.com/postseason (accessed 2026-11-25)
+- Super Bowl LXII date report (secondary, NFL announcement reported): https://www.atlantanewsfirst.com/2026/07/24/nfl-sets-date-super-bowl-lxii-mercedes-benz-stadium-atlanta/ (accessed 2026-11-25)
+
+### Verification performed
+
+- `python3 scripts/build_schedule.py` regenerated `docs/data/schedule-data.js`.
+- Node sanity check after generation: 1133 days, 59 events, 19 season windows, vacation windows for 2027-2029.
+- Local HTTP smoke test: `docs/index.html` returned HTTP 200.
+- No invented game times/scores; TBA left TBA; unreleased 2027-2029 schedules marked ESTIMATED.
+- **Correction during merge:** 2027 pre-MLB vacation window was initially modeled as Feb 15-Mar 23 based on regular season start; MLB official Spring Training announcement confirms Spring Training begins Feb 19, 2027. Because user definition includes MLB preseason, the 2027 window must be corrected/flagged. Data and UI updated accordingly.
+
+### Flagged irregularities (published on docs/flagged.html)
+
+- F-001 MLB 2028 schedule unreleased (estimated window).
+- F-002 MLB 2029 schedule unreleased (estimated window).
+- F-003 MLB 2027 postseason/game times partially unreleased.
+- F-004 NFL 2027-28 season schedule unreleased (estimated; SB LXII date anchored).
+- F-005 NFL 2028-29, 2029-30 schedules unreleased (estimated).
+- F-006 49ers 2027-2029 game dates unreleased.
+- F-007 Stanford/Cal 2027-2029 schedules unreleased.
+- F-008 Westwood One SF 94122 AM/FM affiliate reception not fully verified.
+- F-009 Super Bowl LXII date from secondary reporting of NFL announcement; manual NFL.com confirmation recommended.
+- F-010 Average game durations are planning estimates.
+- F-011 Some 2026 Stanford/Cal times TBA.
+- F-012 MLB.com 2027 release page had automated fetch extraction anomaly; key dates corroborated.
+- F-013 MLB Spring Training/preseason windows for 2027-2029 are estimated/unverified at game-level; 2027 Spring Training start is verified (Feb 19) but full radio-impacting schedule is not fully modeled.
+
+### Handoff / log
+
+- 2026-11-25 9987b915: Built static site and data generator; PR #6 opened.
+- 2026-11-25 9987b915: Merge conflict with main resolved. Preserved main's existing site files and history; kept docs/ dashboard and added spring-training correction.
+
+---
+
+## Prior/main-branch coordination history (preserved)
+
 # COORDINATION — Freetime3 (Vacation Windows)
 
 Session ID: `arena-f23a77a4-freetime3` · Branch: `arena/f23a77a4-freetime3` · Base: `6429edc` (main)

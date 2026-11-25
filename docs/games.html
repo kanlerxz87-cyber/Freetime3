@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games &amp; Schedule - Free Time Vacation</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">Free Time Vacation <span>SF Bay Area Sports Radio Planner</span></div>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="calendar.html">Calendar / Scoreboard</a>
+        <a href="games.html" class="active">Games &amp; Schedule</a>
+        <a href="sources.html">Sources &amp; Verification</a>
+        <a href="flagged.html">Flagged for Review</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="section">
+      <h2>Games &amp; Schedule</h2>
+      <p class="lead">Tracked events and season windows. Every row includes status and source link(s). Unreleased 2027-2029 game-level schedules are represented as estimated season windows, not invented games.</p>
+      <div class="callout info"><strong>Scope:</strong> MLB (all 30 teams; Giants/A's high priority), 49ers NFL (preseason/regular/postseason), Stanford NCAAF, Cal NCAAF, Westwood One Sports national NFL radio broadcasts. "High priority" is flagged on rows that match the user-designated high-priority categories.</div>
+
+      <div class="filters">
+        <label>Category
+          <select id="f-cat">
+            <option value="">All</option>
+            <option value="MLB">MLB</option>
+            <option value="NFL">NFL / 49ers / Westwood One</option>
+            <option value="NCAAF Stanford">NCAAF Stanford</option>
+            <option value="NCAAF California">NCAAF California</option>
+            <option value="NCAAF">NCAAF (all)</option>
+          </select>
+        </label>
+        <label>Status
+          <select id="f-status">
+            <option value="">All</option>
+            <option value="verified">Verified</option>
+            <option value="estimated">Estimated</option>
+            <option value="tba">TBA time</option>
+          </select>
+        </label>
+        <label>Year
+          <select id="f-year">
+            <option value="">All</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+          </select>
+        </label>
+        <label>Search <input id="f-q" type="search" placeholder="team, event, note"></label>
+        <button class="btn" id="f-reset">Reset</button>
+      </div>
+
+      <div class="small" id="count"></div>
+      <div class="table-wrap" style="margin-top:10px;">
+        <table>
+          <thead>
+            <tr>
+              <th>Date / Window</th>
+              <th>Event / Window</th>
+              <th>Category</th>
+              <th>Priority</th>
+              <th>Time (PT)</th>
+              <th>Duration (est.)</th>
+              <th>Status</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer>Every row should have an official/primary source link or be explicitly flagged. No invented game times.</footer>
+  <script src="data/schedule-data.js"></script>
+  <script>
+    (function(){
+      const D = window.SCHEDULE_DATA;
+      const src = D.sources;
+      const rows = [];
+      // season windows
+      D.season_windows.forEach(w => {
+        rows.push({
+          date: w.start + ' to ' + w.end,
+          sort: w.start,
+          title: w.label,
+          category: w.category,
+          priority: w.priority || 'high',
+          time: 'Season window',
+          duration: 'Varies by day/game',
+          status: w.status,
+          note: w.note || '',
+          source_ids: w.source_ids || []
+        });
+      });
+      // events
+      D.events.forEach(e => {
+        rows.push({
+          date: e.date,
+          sort: e.date,
+          title: e.title,
+          category: e.category,
+          priority: e.priority || 'high',
+          time: e.time_pt ? e.time_pt + ' PT' : (e.status.includes('tba') ? 'TBA' : ''),
+          duration: e.duration_minutes ? `~${e.duration_minutes} min` : '',
+          status: e.status,
+          note: e.note || '',
+          source_ids: e.source_ids || [],
+          source_url: e.source_url
+        });
+      });
+      rows.sort((a,b)=> (a.sort||'').localeCompare(b.sort||'') || a.title.localeCompare(b.title));
+
+      function statusBadge(s){
+        if ((s||'').includes('verified')) return '<span class="badge verified">Verified</span>';
+        if ((s||'').includes('estimated')) return '<span class="badge estimated">Estimated</span>';
+        if ((s||'').includes('tba')) return '<span class="badge mixed">Verified date / TBA time</span>';
+        return `<span class="badge">${s||''}</span>`;
+      }
+      function sourceLinks(r){
+        const links = (r.source_ids||[]).map(id=>src[id]).filter(Boolean).map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${s.publisher}</a>`);
+        if (r.source_url && !links.some(l=>l.includes(r.source_url))) links.push(`<a href="${r.source_url}" target="_blank" rel="noopener">Event link</a>`);
+        return links.length ? links.join('<br>') : '<span class="badge estimated">Missing source - flagged</span>';
+      }
+
+      function render(){
+        const cat = document.getElementById('f-cat').value;
+        const st = document.getElementById('f-status').value;
+        const yr = document.getElementById('f-year').value;
+        const q = document.getElementById('f-q').value.toLowerCase().trim();
+        const filtered = rows.filter(r => {
+          if (cat) {
+            if (cat === 'NFL') { if (!/NFL|49ers|Westwood/i.test(r.category + ' ' + r.title)) return false; }
+            else if (cat === 'NCAAF') { if (!/NCAAF/i.test(r.category)) return false; }
+            else if (!r.category.includes(cat)) return false;
+          }
+          if (st) {
+            if (st==='verified' && !String(r.status).includes('verified')) return false;
+            if (st==='estimated' && !String(r.status).includes('estimated')) return false;
+            if (st==='tba' && !String(r.status).includes('tba')) return false;
+          }
+          if (yr && !(r.sort||'').startsWith(yr)) return false;
+          if (q) {
+            const hay = (r.title+' '+r.category+' '+r.note+' '+r.date).toLowerCase();
+            if (!hay.includes(q)) return false;
+          }
+          return true;
+        });
+        document.getElementById('count').textContent = `${filtered.length} row(s) shown of ${rows.length}.`;
+        document.getElementById('rows').innerHTML = filtered.map(r => `<tr>
+          <td style="white-space:nowrap">${r.date}</td>
+          <td>${r.title}${r.note?`<div class="small">${r.note}</div>`:''}</td>
+          <td>${r.category}</td>
+          <td><span class="badge high">${r.priority}</span></td>
+          <td>${r.time||''}</td>
+          <td>${r.duration||''}</td>
+          <td>${statusBadge(r.status)}</td>
+          <td>${sourceLinks(r)}</td>
+        </tr>`).join('');
+      }
+      ['f-cat','f-status','f-year'].forEach(id=>document.getElementById(id).addEventListener('change',render));
+      document.getElementById('f-q').addEventListener('input',render);
+      document.getElementById('f-reset').addEventListener('click',()=>{['f-cat','f-status','f-year','f-q'].forEach(id=>document.getElementById(id).value=''); render();});
+      render();
+    })();
+  </script>
+</body>
+</html>
