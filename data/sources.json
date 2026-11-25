@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-11-25",
+  "timezone": "America/Los_Angeles (PST/PDT displayed as local PT)",
+  "policy": {
+    "verification": "Every schedule row should include an official source URL. If not confirmed from an official source, leave value blank and flag as unverified.",
+    "estimation": "Future seasons without officially released per-game schedules are marked ESTIMATED. Estimated windows are based on official league season-structure sources and historical patterns; they are not official game schedules.",
+    "no_hallucination": "No game times, opponents, or broadcast details are invented. Unconfirmed fields are blank/null and flagged."
+  },
+  "official_sources": [
+    {"id": "src-mlb-giants", "name": "San Francisco Giants Official Schedule (MLB.com)", "url": "https://www.mlb.com/giants/schedule", "type": "official", "accessed": "2026-11-25", "notes": "Official MLB team schedule source for Giants."},
+    {"id": "src-mlb-athletics", "name": "Athletics Official Schedule (MLB.com)", "url": "https://www.mlb.com/athletics/schedule", "type": "official", "accessed": "2026-11-25", "notes": "Official MLB team schedule source for Athletics (Sacramento/Sutter Health Park)."},
+    {"id": "src-mlb-schedule", "name": "MLB Official Schedule", "url": "https://www.mlb.com/schedule", "type": "official", "accessed": "2026-11-25", "notes": "Official league-wide MLB schedule."},
+    {"id": "src-mlb-postseason", "name": "MLB Postseason", "url": "https://www.mlb.com/postseason", "type": "official", "accessed": "2026-11-25", "notes": "Official MLB postseason information."},
+    {"id": "src-nfl-49ers", "name": "San Francisco 49ers Official Schedule", "url": "https://www.49ers.com/schedule/", "type": "official", "accessed": "2026-11-25", "notes": "Official 49ers schedule; includes 2026 regular season games, times, TV."},
+    {"id": "src-nfl-schedule", "name": "NFL Official Schedule", "url": "https://www.nfl.com/schedules/", "type": "official", "accessed": "2026-11-25", "notes": "Official NFL league schedule."},
+    {"id": "src-nfl-season", "name": "NFL Season Structure / Operations", "url": "https://operations.nfl.com/gameday/nfl-schedule/", "type": "official", "accessed": "2026-11-25", "notes": "Official NFL schedule operations/structure reference."},
+    {"id": "src-stanford", "name": "Stanford Football Official Schedule", "url": "https://gostanford.com/sports/football/schedule", "type": "official", "accessed": "2026-11-25", "notes": "Official Stanford Athletics football schedule."},
+    {"id": "src-cal", "name": "California Golden Bears Football Official Schedule", "url": "https://calbears.com/sports/football/schedule", "type": "official", "accessed": "2026-11-25", "notes": "Official Cal Athletics football schedule."},
+    {"id": "src-ww1", "name": "Westwood One Sports NFL Schedule", "url": "https://www.westwoodonesports.com/nfl-schedule/", "type": "official", "accessed": "2026-11-25", "notes": "Official Westwood One Sports NFL national radio broadcast schedule."},
+    {"id": "src-ww1-station", "name": "Westwood One Station Finder", "url": "https://www.westwoodonesports.com/station-finder", "type": "official", "accessed": "2026-11-25", "notes": "Station finder for Westwood One affiliates; SF Bay Area AM/FM availability must be verified per station."},
+    {"id": "src-knbr", "name": "KNBR 680 / 104.5 The Sports Leader", "url": "https://www.thesportsleader.com/", "type": "official-station", "accessed": "2026-11-25", "notes": "SF Bay Area sports radio station; Giants flagship per MLB/team broadcast info. Verify specific program/game carriage."},
+    {"id": "src-957", "name": "95.7 The Game (KGMZ)", "url": "https://www.957thegame.com/", "type": "official-station", "accessed": "2026-11-25", "notes": "SF Bay Area sports radio station; verify carriage for specific teams/events."},
+    {"id": "src-mlb-2026-release", "name": "MLB 2026 Schedule Release", "url": "https://www.mlb.com/news/mlb-2026-schedule-released", "type": "official", "accessed": "2026-11-25", "notes": "Official MLB schedule release reference."},
+    {"id": "src-nfl-2026-release", "name": "NFL 2026 Schedule Release", "url": "https://www.nfl.com/schedules/2026/", "type": "official", "accessed": "2026-11-25", "notes": "Official NFL 2026 schedule reference."},
+    {"id": "src-acc-2026", "name": "ACC Football Schedule", "url": "https://theacc.com/sports/football/schedule", "type": "official", "accessed": "2026-11-25", "notes": "Official ACC schedule source for Stanford/Cal conference games."}
+  ]
+}

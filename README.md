@@ -33,6 +33,10 @@ The planner does not treat missing data as free. It leaves minutes/end-times unv
 - [Westwood One NFL schedule](https://www.westwoodonesports.com/nfl-schedule/)
 - [KNBR programming schedule](https://www.thesportsleader.com/shows)
 
+## Supplementary verified 2026 data (session 8ce435e1)
+
+Additional verified 2026 rows were added in `site/assets/data.js` (49ers, Stanford, Cal, Westwood One NFL national broadcasts) with official source links in `data/sources.json` and verification notes in `docs/verification.md`. Supplementary calendar/sources pages: `site/calendar.html`, `site/sources.html`. Unverified/incomplete items remain flagged; no per-game rows were fabricated.
+
 ## Local preview
 
 Open `index.html` or run any static HTTP server in the repository root. The live MLB view queries MLB's official StatsAPI in the browser. If that request fails, the calendar reports an unverified state and links the official source; it does not substitute guessed games.

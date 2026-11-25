@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calendar / Scoreboard - Freetime3</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header><div class="wrap"><h1>Calendar / Scoreboard</h1><div class="sub">Day-by-day view of tracked conflicts and estimated free-time blocks. Times shown in PT (America/Los_Angeles). Unverified/estimated values are labeled.</div></div></header>
+<nav><div class="wrap">
+  <a href="index.html">Executive Summary</a><a class="active" href="calendar.html">Calendar / Scoreboard</a><a href="schedules.html">Schedule Tables</a><a href="radio.html">SF Radio / Broadcasts</a><a href="sources.html">Sources & Verification</a><a href="flagged.html">Flagged for Review</a>
+</div></nav>
+<div class="wrap">
+  <div class="notice warn mb"><strong>Calendar scope:</strong> This calendar renders verified 2026 events currently loaded in <code>site/assets/data.js</code> (49ers, Stanford, Cal, Westwood One NFL national games). It also overlays <strong>ESTIMATED season conflict windows</strong> for 2027–2029 and MLB/NFL/NCAAF season structures. It does <em>not</em> invent unverified per-game rows. Days marked "Possible conflict (season window)" mean an official per-game schedule is not fully loaded/verified; treat as not free until verified.</div>
+
+  <div class="card mb">
+    <div class="cal-head">
+      <div>
+        <h2 id="monthLabel" style="margin:0">Month</h2>
+        <div class="small muted">Click a day for agenda. Use buttons to navigate.</div>
+      </div>
+      <div class="navbtns">
+        <button id="prevDay">◀ Day</button>
+        <button id="todayBtn">Today</button>
+        <button id="nextDay">Day ▶</button>
+        <button id="prevMonth">◀ Month</button>
+        <button id="nextMonth">Month ▶</button>
+      </div>
+    </div>
+    <div class="legend">
+      <span class="pill high">HIGH priority conflict</span>
+      <span class="pill ok">No verified conflict loaded</span>
+      <span class="pill warn">Season/window conflict possible (ESTIMATED)</span>
+      <span class="pill est">ESTIMATED</span>
+    </div>
+    <div class="calendar" id="calendar"></div>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <h2 id="agendaTitle">Day Agenda</h2>
+      <div id="agenda" class="agenda small"></div>
+    </div>
+    <div class="card">
+      <h2>Free-Time Estimate (selected day)</h2>
+      <div id="freeSummary" class="small"></div>
+      <div class="notice mt small"><strong>Estimation rule:</strong> If a game has a confirmed start time but no confirmed end time, end is estimated as start + sport average duration (MLB 165m, NFL 195m, NCAAF 210m, WW1 NFL 210m). Estimates are labeled and not official. Overlaps merged into busy blocks.</div>
+    </div>
+  </div>
+</div>
+<div class="footer">Freetime3 · Calendar view is a planning aid; verify against official sources before booking travel.</div>
+<script src="assets/data.js"></script>
+<script>
+(function(){
+  const TZ = 'America/Los_Angeles';
+  const data = window.FREETIME_DATA;
+  const events = data.events.slice();
+  // Season windows (ESTIMATED) - used to mark days as "possible conflict" when no per-game schedule is fully loaded.
+  // These are conservative planning windows, not official schedules.
+  const seasonWindows = [
+    {name:'MLB season window (all 30 teams) - ESTIMATED', start:'2026-03-25', end:'2026-11-01', note:'MLB 2026 regular season opened Mar 25 per MLB release patterns; postseason can extend into early Nov. ESTIMATED end; verify at MLB.com/postseason.' , source:'https://www.mlb.com/schedule'},
+    {name:'NFL season window (all games) - ESTIMATED', start:'2026-08-01', end:'2027-02-14', note:'Includes preseason through Super Bowl window. Exact Super Bowl/offseason boundaries ESTIMATED.', source:'https://operations.nfl.com/gameday/nfl-schedule/'},
+    {name:'NCAAF season window (Stanford/Cal) - ESTIMATED', start:'2026-08-29', end:'2026-12-15', note:'Regular season late Aug-Nov; bowls/playoff may extend beyond. ESTIMATED.', source:'https://gostanford.com/sports/football/schedule'},
+    {name:'MLB season window - ESTIMATED', start:'2027-03-25', end:'2027-11-05', note:'No official 2027 per-game schedule loaded. ESTIMATED from typical MLB calendar.', source:'https://www.mlb.com/schedule'},
+    {name:'NFL season window - ESTIMATED', start:'2027-08-01', end:'2028-02-13', note:'ESTIMATED.', source:'https://operations.nfl.com/gameday/nfl-schedule/'},
+    {name:'NCAAF season window - ESTIMATED', start:'2027-08-28', end:'2027-12-15', note:'ESTIMATED.', source:'https://gostanford.com/sports/football/schedule'},
+    {name:'MLB season window - ESTIMATED', start:'2028-03-23', end:'2028-11-05', note:'ESTIMATED.', source:'https://www.mlb.com/schedule'},
+    {name:'NFL season window - ESTIMATED', start:'2028-08-01', end:'2029-02-11', note:'ESTIMATED.', source:'https://operations.nfl.com/gameday/nfl-schedule/'},
+    {name:'NCAAF season window - ESTIMATED', start:'2028-08-26', end:'2028-12-15', note:'ESTIMATED.', source:'https://gostanford.com/sports/football/schedule'},
+    {name:'MLB season window - ESTIMATED', start:'2029-03-28', end:'2029-11-05', note:'ESTIMATED.', source:'https://www.mlb.com/schedule'},
+    {name:'NFL season window - ESTIMATED', start:'2029-08-01', end:'2030-02-11', note:'ESTIMATED.', source:'https://operations.nfl.com/gameday/nfl-schedule/'},
+    {name:'NCAAF season window - ESTIMATED', start:'2029-08-25', end:'2029-12-15', note:'ESTIMATED.', source:'https://gostanford.com/sports/football/schedule'}
+  ];
+  function pad(n){return String(n).padStart(2,'0');}
+  function ymd(d){return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());}
+  function parseYMD(s){const [y,m,d]=s.split('-').map(Number); return new Date(y,m-1,d);}
+  function inWindow(dateStr,w){return dateStr>=w.start && dateStr<=w.end;}
+  function eventsFor(dateStr){return events.filter(e=>e.date===dateStr && e.status!=="BYE");}
+  function windowsFor(dateStr){return seasonWindows.filter(w=>inWindow(dateStr,w));}
+  function timeToMin(t){if(!t) return null; const [h,m]=t.split(':').map(Number); return h*60+m;}
+  function minToTime(m){m=((m%1440)+1440)%1440; return pad(Math.floor(m/60))+":"+pad(m%60);}
+  function mergeBlocks(blocks){if(!blocks.length) return []; blocks.sort((a,b)=>a.s-b.s); const out=[{...blocks[0]}]; for(let i=1;i<blocks.length;i++){const b=blocks[i], last=out[out.length-1]; if(b.s<=last.e){last.e=Math.max(last.e,b.e); last.labels=Array.from(new Set(last.labels.concat(b.labels)));} else out.push({...b});} return out;}
+  let current = new Date(2026,10,25); // Nov 25 2026
+  let selected = ymd(current);
+  const cal = document.getElementById('calendar');
+  const monthLabel = document.getElementById('monthLabel');
+  const agenda = document.getElementById('agenda');
+  const agendaTitle = document.getElementById('agendaTitle');
+  const freeSummary = document.getElementById('freeSummary');
+
+  function render(){
+    cal.innerHTML='';
+    const year=current.getFullYear(), month=current.getMonth();
+    monthLabel.textContent = current.toLocaleString('en-US',{month:'long',year:'numeric',timeZone:TZ});
+    ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].forEach(d=>{const el=document.createElement('div'); el.className='dow'; el.textContent=d; cal.appendChild(el);});
+    const first=new Date(year,month,1); const start=new Date(first); start.setDate(1-first.getDay());
+    for(let i=0;i<42;i++){
+      const d=new Date(start); d.setDate(start.getDate()+i);
+      const ds=ymd(d);
+      const dayEv=eventsFor(ds);
+      const wins=windowsFor(ds);
+      const cell=document.createElement('div');
+      cell.className='day'+(d.getMonth()!==month?' other':'')+(ds===selected?' selected':'');
+      let badge='';
+      if(dayEv.length>0){ badge='<span class="badge busy">'+dayEv.length+' conflict</span>'; }
+      else if(wins.length>0){ badge='<span class="badge mixed">window</span>'; }
+      else { badge='<span class="badge free">free</span>'; }
+      cell.innerHTML='<div class="d"><span>'+d.getDate()+'</span>'+badge+'</div>';
+      dayEv.slice(0,3).forEach(e=>{const ev=document.createElement('div'); ev.className='ev high'; ev.title=e.category+': '+e.opponent; ev.textContent=(e.timePT?e.timePT+' ':'')+e.opponent; cell.appendChild(ev);});
+      if(dayEv.length>3){const more=document.createElement('div'); more.className='small muted'; more.textContent='+'+(dayEv.length-3)+' more'; cell.appendChild(more);}
+      if(dayEv.length===0 && wins.length>0){const w=document.createElement('div'); w.className='ev'; w.style.background='#fffbeb'; w.style.color='#92400e'; w.textContent='Possible conflict (season)'; cell.appendChild(w);}
+      cell.onclick=()=>{selected=ds; render();};
+      cal.appendChild(cell);
+    }
+    renderAgenda();
+  }
+  function renderAgenda(){
+    const dayEv=eventsFor(selected).sort((a,b)=>(a.timePT||'99:99').localeCompare(b.timePT||'99:99'));
+    const wins=windowsFor(selected);
+    agendaTitle.textContent='Day Agenda — '+selected;
+    if(!dayEv.length && !wins.length){ agenda.innerHTML='<div class="notice" style="background:#ecfdf5;border-color:#a7f3d0;color:#065f46"><strong>No tracked conflicts loaded and no estimated season window.</strong> Verify before travel; absence in this dataset is not proof of no games.</div>'; freeSummary.innerHTML='<div class="pill ok">Potentially free (unverified)</div><p>No verified conflicts loaded. This does not guarantee no game; verify official schedules.</p>'; return; }
+    let html='';
+    if(wins.length){ html+='<div class="notice warn mb"><strong>Estimated season window(s) active:</strong><ul class="clean">'+wins.map(w=>'<li>'+w.name+' <a href="'+w.source+'" target="_blank">source</a><br><span class="muted">'+w.note+'</span></li>').join('')+'</ul></div>'; }
+    if(dayEv.length){
+      html+='<table><thead><tr><th>Time (PT)</th><th>Category</th><th>Matchup</th><th>Status</th><th>Source</th></tr></thead><tbody>';
+      dayEv.forEach(e=>{
+        const est = e.endTimePT? '' : ' <span class="pill est">end est.</span>';
+        html+='<tr><td>'+(e.timePT||'<span class="muted">TBD</span>')+est+'</td><td><span class="pill high">'+e.category+'</span></td><td>'+e.opponent+'<div class="muted small">'+(e.venue||'')+'</div></td><td>'+e.status+(e.estimate?' <span class="pill est">ESTIMATED</span>':'')+'</td><td><a href="'+e.sourceUrl+'" target="_blank">official</a></td></tr>';
+      });
+      html+='</tbody></table>';
+    } else {
+      html+='<div class="notice warn"><strong>No verified per-game rows loaded for this date</strong>, but estimated season window(s) apply. Treat as potentially busy until official schedules are checked.</div>';
+    }
+    agenda.innerHTML=html;
+    // Free-time estimate
+    const blocks=[];
+    dayEv.forEach(e=>{ if(!e.timePT) return; const s=timeToMin(e.timePT); const dur=e.durationMin||180; blocks.push({s:s,e:s+dur,labels:[e.category]}); });
+    const merged=mergeBlocks(blocks);
+    let fs='';
+    if(dayEv.some(e=>!e.timePT)){ fs+='<div class="notice warn"><strong>TBD start time present.</strong> Free-time cannot be fully computed for this day.</div>'; }
+    if(!merged.length && !dayEv.some(e=>!e.timePT)){ fs+='<p><span class="pill ok">No timed conflicts loaded</span></p>'; }
+    if(merged.length){
+      fs+='<p><strong>Estimated busy blocks (PT):</strong></p><ul class="clean">';
+      merged.forEach(b=>{ fs+='<li><span class="pill bad">'+minToTime(b.s)+'–'+minToTime(b.e)+'</span> '+b.labels.join(', ')+'</li>'; });
+      fs+='</ul>';
+      // compute free gaps 06:00-24:00 for readability
+      const dayStart=6*60, dayEnd=24*60;
+      let cursor=dayStart; const gaps=[];
+      merged.forEach(b=>{ const s=Math.max(b.s,dayStart), e=Math.min(b.e,dayEnd); if(s>cursor) gaps.push([cursor,s]); cursor=Math.max(cursor,e); });
+      if(cursor<dayEnd) gaps.push([cursor,dayEnd]);
+      fs+='<p class="mt"><strong>Estimated free gaps (06:00–24:00 PT):</strong></p>';
+      if(gaps.length){ fs+='<ul class="clean">'+gaps.map(g=>'<li><span class="pill ok">'+minToTime(g[0])+'–'+minToTime(g[1])+'</span> ('+Math.round((g[1]-g[0])/60*10)/10+' hrs)</li>').join('')+'</ul>'; }
+      else { fs+='<p class="muted">No free gap in 06:00–24:00 window after estimated busy blocks.</p>'; }
+    }
+    if(wins.length && !dayEv.length){ fs+='<div class="notice warn mt"><strong>Season window active.</strong> No per-game rows loaded; do not treat day as verified free.</div>'; }
+    freeSummary.innerHTML=fs;
+  }
+  document.getElementById('prevMonth').onclick=()=>{current=new Date(current.getFullYear(),current.getMonth()-1,1); render();};
+  document.getElementById('nextMonth').onclick=()=>{current=new Date(current.getFullYear(),current.getMonth()+1,1); render();};
+  document.getElementById('prevDay').onclick=()=>{const d=parseYMD(selected); d.setDate(d.getDate()-1); selected=ymd(d); current=new Date(d.getFullYear(),d.getMonth(),1); render();};
+  document.getElementById('nextDay').onclick=()=>{const d=parseYMD(selected); d.setDate(d.getDate()+1); selected=ymd(d); current=new Date(d.getFullYear(),d.getMonth(),1); render();};
+  document.getElementById('todayBtn').onclick=()=>{current=new Date(2026,10,25); selected='2026-11-25'; render();};
+  render();
+})();
+</script>
+</body>
+</html>

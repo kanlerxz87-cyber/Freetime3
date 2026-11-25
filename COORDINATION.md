@@ -72,3 +72,14 @@ This session is the **final integration session** (repo was empty except README;
 - **PR #4** [Add official references to remaining review flags](https://github.com/kanlerxz87-cyber/Freetime3/pull/4) was merged on 2026-11-25 (merge commit `902a888997c27a73d0a9a1de8b16e2fc97b1f3ea`). Build and Pages deployment workflow run [45628952837](https://github.com/kanlerxz87-cyber/Freetime3/actions/runs/45628952837) succeeded.
 - Live GitHub Pages URL: https://kanlerxz87-cyber.github.io/Freetime3/ (Pages reports `status: built`; live page was fetched after deploy and displayed the official MLB feed result for the selected date).
 - All-sports schedule gaps remain `needs review` and are published under the on-site Flagged for Review page; they do not block publication.
+
+## Arena session — 8ce435e1
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Supplementary verified 2026 data + calendar/schedule tables | needs review | 8ce435e1 | `data/sources.json`, `docs/verification.md`, `site/assets/data.js`, `site/assets/style.css`, `site/calendar.html`, `site/sources.html`, `site/schedules.html` (merged conflict resolved to preserve main site) |
+
+- 2026-11-25: Added verified 2026 schedule rows from official sources (49ers 18 rows incl bye/TBD, Stanford 12, Cal 12, Westwood One NFL national 20) in `site/assets/data.js` with source URLs. Added `site/calendar.html` (day/month scoreboard with PT busy/free estimates) and `site/sources.html`. 
+- Sources verified: https://www.49ers.com/schedule/, https://gostanford.com/sports/football/schedule, https://calbears.com/sports/football/schedule, https://www.westwoodonesports.com/nfl-schedule/.
+- Flagged/incomplete: full all-MLB/all-NFL per-game 2026-2028 transcription not completed (no fabrication); 2027-2029 per-game schedules unreleased/ESTIMATED; SF 94122 AM/FM carriage unverified. See `site/flagged.html` and `docs/verification.md`.
+- Merge resolution: accepted main's conflicted root/site pages to preserve deployed site; kept supplementary data/assets/calendar/sources files added by this session.
