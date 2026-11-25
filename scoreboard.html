@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day Scoreboard — Free Time Vacation</title><link rel="stylesheet" href="style.css"></head><body>
+<header><h1>📅 Day Scoreboard</h1><p>Like an MLB/NFL scoreboard — pick any day, see if it's free</p></header>
+<nav><a href="index.html">🏠 Home</a><a href="executive-summary.html">📋 Executive Summary</a><a href="vacation-windows.html">✈️ Vacation Windows</a><a href="scoreboard.html" class="on">📅 Day Scoreboard</a><a href="schedules.html">📊 Verified Schedules</a><a href="radio.html">📻 Radio Guide</a><a href="methodology.html">🔬 Methodology</a><a href="flagged.html">🚩 Flagged for Review</a></nav>
+<main>
+<div class="card"><h2 id="title">Today</h2>
+<p>
+<button class="btn" id="prev">◀ Yesterday</button>
+<input type="date" id="picker" min="2026-01-01" max="2030-12-31">
+<button class="btn" id="next">Tomorrow ▶</button>
+<button class="btn" id="todayBtn">Today</button>
+</p>
+<div id="verdict" class="big"></div>
+<div id="detail"></div>
+<div id="games"></div>
+<p class="note">Busy blocks (Pacific): MLB ~Mar 25–Oct 31 · NFL ~Aug 6–Feb 14 · Stanford/Cal ~late Aug–late Nov. A day is <span class="free">FREE</span> only if it falls outside all blocks. Durations: MLB 2h38m · NFL/NCAAF 3h12m.</p>
+</div>
+<div class="card"><h2>🗓️ Month view</h2>
+<p><button class="btn" id="mPrev">◀ Prev month</button> <span id="mLabel"></span> <button class="btn" id="mNext">Next month ▶</button></p>
+<div class="cal" id="cal"></div>
+<p class="note"><span class="free">■ Green</span> = free day · <span class="busy">■ Red</span> = games on · Click a day to load it above.</p>
+</div>
+</main><footer><a href="index.html">← Home</a></footer>
+<script>
+const BLOCKS=[
+ ["2026-03-25","2026-10-31","MLB 2026 (VERIFIED)"],
+ ["2026-08-06","2027-02-14","NFL 2026 preseason→Super Bowl LXI (VERIFIED)"],
+ ["2026-08-29","2026-11-28","Stanford/Cal NCAAF 2026 (VERIFIED)"],
+ ["2027-03-24","2027-10-30","MLB 2027 regular (VERIFIED) + postseason (ESTIMATED)"],
+ ["2027-08-06","2028-02-13","NFL 2027 season (ESTIMATED)"],
+ ["2027-08-28","2027-12-04","Stanford/Cal NCAAF 2027 (ESTIMATED)"],
+ ["2028-03-29","2028-10-31","MLB 2028 (ESTIMATED)"],
+ ["2028-08-05","2029-02-11","NFL 2028 season (ESTIMATED)"],
+ ["2028-08-26","2028-12-02","Stanford/Cal NCAAF 2028 (ESTIMATED)"],
+ ["2029-03-28","2029-10-31","MLB 2029 (ESTIMATED)"],
+ ["2029-08-04","2030-02-10","NFL 2029 season (ESTIMATED)"],
+ ["2029-08-25","2029-12-01","Stanford/Cal NCAAF 2029 (ESTIMATED)"]
+];
+const D=s=>new Date(s+"T12:00:00");
+const iso=d=>d.toISOString().slice(0,10);
+let cur=new Date(); cur.setHours(12,0,0,0);
+function busyOn(d){const s=iso(d);return BLOCKS.filter(b=>s>=b[0]&&s<=b[1]);}
+function fmt(d){return d.toLocaleDateString("en-US",{weekday:"long",year:"numeric",month:"long",day:"numeric"});}
+function render(){
+ document.getElementById("picker").value=iso(cur);
+ document.getElementById("title").textContent=fmt(cur);
+ const b=busyOn(cur),v=document.getElementById("verdict"),det=document.getElementById("detail"),g=document.getElementById("games");
+ if(b.length===0){v.innerHTML='<span class="free">🟢 FREE DAY — no tracked games on the air</span>';det.innerHTML="<p>All 24 hours are free. This is a vacation-safe day.</p>";g.innerHTML="";}
+ else{v.innerHTML='<span class="busy">🔴 BUSY — games on the radio today</span>';
+  det.innerHTML="<p>On air today:</p><ul>"+b.map(x=>"<li>"+x[2]+"</li>").join("")+"</ul>";
+  g.innerHTML="<table><tr><th>Sport</th><th>Typical PT window</th><th>Duration</th></tr>"+
+   (b.some(x=>x[2].startsWith("MLB"))?"<tr><td>MLB (all 30 clubs)</td><td>10:00 AM – 10:00 PM</td><td>~2h 38m / game</td></tr>":"")+
+   (b.some(x=>x[2].startsWith("NFL"))?"<tr><td>NFL + Westwood One radio</td><td>10:00 AM – 8:30 PM</td><td>~3h 12m / game</td></tr>":"")+
+   (b.some(x=>x[2].startsWith("Stanford"))?"<tr><td>Stanford / Cal NCAAF</td><td>9:00 AM – 10:30 PM</td><td>~3h 12m / game</td></tr>":"")+"</table>";}
+ renderCal();
+}
+let viewY=cur.getFullYear(),viewM=cur.getMonth();
+function renderCal(){
+ const c=document.getElementById("cal");c.innerHTML="";
+ document.getElementById("mLabel").textContent=new Date(viewY,viewM,1).toLocaleDateString("en-US",{month:"long",year:"numeric"});
+ ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].forEach(d=>{const e=document.createElement("div");e.className="dow";e.textContent=d;c.appendChild(e);});
+ const first=new Date(viewY,viewM,1).getDay(),days=new Date(viewY,viewM+1,0).getDate();
+ for(let i=0;i<first;i++)c.appendChild(document.createElement("div"));
+ for(let d=1;d<=days;d++){const dt=new Date(viewY,viewM,d,12);const e=document.createElement("div");
+  e.textContent=d;e.className=busyOn(dt).length?"busy-d":"free-d";
+  if(iso(dt)===iso(new Date()))e.classList.add("today");
+  e.style.cursor="pointer";e.onclick=()=>{cur=dt;render();};c.appendChild(e);}
+}
+document.getElementById("prev").onclick=()=>{cur.setDate(cur.getDate()-1);viewY=cur.getFullYear();viewM=cur.getMonth();render();};
+document.getElementById("next").onclick=()=>{cur.setDate(cur.getDate()+1);viewY=cur.getFullYear();viewM=cur.getMonth();render();};
+document.getElementById("todayBtn").onclick=()=>{cur=new Date();cur.setHours(12,0,0,0);viewY=cur.getFullYear();viewM=cur.getMonth();render();};
+document.getElementById("picker").onchange=e=>{cur=D(e.target.value);viewY=cur.getFullYear();viewM=cur.getMonth();render();};
+document.getElementById("mPrev").onclick=()=>{viewM--;if(viewM<0){viewM=11;viewY--;}renderCal();};
+document.getElementById("mNext").onclick=()=>{viewM++;if(viewM>11){viewM=0;viewY++;}renderCal();};
+render();
+</script></body></html>

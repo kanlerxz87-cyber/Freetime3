@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "generated": "2026-11-25",
+    "timezone": "America/Los_Angeles (PST/PDT)",
+    "note": "All dates below verified against official sources listed per entry. Estimates flagged ESTIMATED."
+  },
+  "mlb": [
+    {"year": 2026, "event": "Opening Night (NYY @ SF)", "date": "2026-03-25", "weekday": "Wednesday", "status": "VERIFIED", "source": "https://www.mlb.com/press-release/press-release-mlb-announces-2026-regular-season-schedule"},
+    {"year": 2026, "event": "Traditional Opening Day (14 games)", "date": "2026-03-26", "weekday": "Thursday", "status": "VERIFIED", "source": "https://www.mlb.com/press-release/press-release-mlb-announces-2026-regular-season-schedule"},
+    {"year": 2026, "event": "All-Star Game (Philadelphia)", "date": "2026-07-14", "weekday": "Tuesday", "status": "VERIFIED", "source": "https://www.mlb.com/press-release/press-release-mlb-announces-2026-regular-season-schedule"},
+    {"year": 2026, "event": "Regular season ends", "date": "2026-09-27", "weekday": "Sunday", "status": "VERIFIED", "source": "https://www.mlb.com/press-release/press-release-mlb-announces-2026-regular-season-schedule"},
+    {"year": 2026, "event": "Postseason begins (Wild Card G1)", "date": "2026-09-29", "weekday": "Tuesday", "status": "VERIFIED", "source": "https://www.usatoday.com/story/sports/mlb/2026/09/23/mlb-playoffs-schedule-2026-tv-channels-how-to-watch-stream/91901872007/"},
+    {"year": 2026, "event": "World Series G1", "date": "2026-10-23", "weekday": "Friday", "status": "VERIFIED", "source": "https://www.usatoday.com/story/sports/mlb/2026/09/23/mlb-playoffs-schedule-2026-tv-channels-how-to-watch-stream/91901872007/"},
+    {"year": 2026, "event": "World Series G7 latest (if needed)", "date": "2026-10-31", "weekday": "Saturday", "status": "VERIFIED", "source": "https://www.usatoday.com/story/sports/mlb/2026/09/23/mlb-playoffs-schedule-2026-tv-channels-how-to-watch-stream/91901872007/"},
+    {"year": 2027, "event": "Opening Night (Netflix, TBA)", "date": "2027-03-24", "weekday": "Wednesday", "status": "VERIFIED", "source": "https://www.mlb.com/news/mlb-2027-schedule-released"},
+    {"year": 2027, "event": "Traditional Opening Day (14 games)", "date": "2027-03-25", "weekday": "Thursday", "status": "VERIFIED", "source": "https://www.mlb.com/news/mlb-2027-schedule-released"},
+    {"year": 2027, "event": "All-Star Game (Wrigley Field, Chicago)", "date": "2027-07-13", "weekday": "Tuesday", "status": "VERIFIED", "source": "https://www.mlb.com/news/mlb-2027-schedule-released"},
+    {"year": 2027, "event": "Regular season ends", "date": "2027-09-26", "weekday": "Sunday", "status": "VERIFIED", "source": "https://www.mlb.com/news/mlb-2027-schedule-released"},
+    {"year": 2027, "event": "Postseason window (ESTIMATED from 2026 pattern)", "date": "2027-09-28 to 2027-10-30", "status": "ESTIMATED", "source": "Pattern from 2026 official dates; not yet released by MLB"},
+    {"year": 2028, "event": "Full season (ESTIMATED — not released)", "date": "2028-03-29 to 2028-10-31", "status": "ESTIMATED", "source": "No official 2028 MLB schedule released as of 2026-11-25; estimated from 2026/2027 pattern"}
+  ],
+  "nfl": [
+    {"year": 2026, "event": "Hall of Fame Game (Preseason)", "date": "2026-08-06", "weekday": "Thursday", "status": "VERIFIED", "source": "https://media.nfl.com/football-information/2026/news/2026-nfl-schedule-announced"},
+    {"year": 2026, "event": "49ers Preseason Wk1 vs TEN (Levi's)", "date": "2026-08-13", "weekday": "Thursday", "status": "VERIFIED", "source": "https://www.49ers.com/news/49ers-finalize-2026-preseason-dates-and-times"},
+    {"year": 2026, "event": "49ers Preseason Wk2 @ LAC", "date": "2026-08-20", "weekday": "Thursday", "status": "VERIFIED", "source": "https://www.49ers.com/news/49ers-finalize-2026-preseason-dates-and-times"},
+    {"year": 2026, "event": "49ers Preseason Wk3 @ LV", "date": "2026-08-27", "weekday": "Thursday", "status": "VERIFIED", "source": "https://www.49ers.com/news/49ers-finalize-2026-preseason-dates-and-times"},
+    {"year": 2026, "event": "Regular season Kickoff (NE @ SEA, Wed)", "date": "2026-09-09", "weekday": "Wednesday", "status": "VERIFIED", "source": "https://media.nfl.com/football-information/2026/news/2026-nfl-schedule-announced"},
+    {"year": 2026, "event": "49ers Wk1 @ LAR Melbourne (Netflix)", "date": "2026-09-10", "weekday": "Thursday", "status": "VERIFIED", "source": "https://media.nfl.com/football-information/2026/news/2026-nfl-schedule-announced"},
+    {"year": 2026, "event": "Regular season ends (Week 18)", "date": "2027-01-09 to 2027-01-10", "status": "VERIFIED", "source": "https://media.nfl.com/football-information/2026/news/2026-nfl-schedule-announced"},
+    {"year": 2026, "event": "Wild Card Weekend begins", "date": "2027-01-16", "weekday": "Saturday", "status": "VERIFIED", "source": "https://media.nfl.com/football-information/2026/news/2026-nfl-schedule-announced"},
+    {"year": 2026, "event": "Championship Games", "date": "2027-01-31", "weekday": "Sunday", "status": "VERIFIED", "source": "https://media.nfl.com/football-information/2026/news/2026-nfl-schedule-announced"},
+    {"year": 2026, "event": "Super Bowl LXI (SoFi Stadium)", "date": "2027-02-14", "weekday": "Sunday", "status": "VERIFIED", "source": "https://media.nfl.com/football-information/2026/news/2026-nfl-schedule-announced"},
+    {"year": 2027, "event": "Full season (ESTIMATED — not released)", "date": "2027-09-09 to 2028-02-13", "status": "ESTIMATED", "source": "No official 2027 NFL schedule released as of 2026-11-25; Super Bowl LXII 2028-02-13 Atlanta confirmed via NFL reporting"}
+  ],
+  "ncaaf": [
+    {"year": 2026, "event": "Stanford Wk0 vs Hawai'i", "date": "2026-08-29", "weekday": "Saturday", "status": "VERIFIED", "source": "https://gostanford.com/sports/football/schedule"},
+    {"year": 2026, "event": "Stanford vs Miami", "date": "2026-09-04", "weekday": "Friday", "status": "VERIFIED", "source": "https://gostanford.com/sports/football/schedule"},
+    {"year": 2026, "event": "Stanford @ Duke", "date": "2026-09-19", "weekday": "Saturday", "status": "VERIFIED", "source": "https://gostanford.com/sports/football/schedule"},
+    {"year": 2026, "event": "Stanford vs Georgia Tech", "date": "2026-09-26", "weekday": "Saturday", "status": "VERIFIED", "source": "https://gostanford.com/sports/football/schedule"},
+    {"year": 2026, "event": "Stanford @ Wake Forest", "date": "2026-10-03", "weekday": "Saturday", "status": "VERIFIED", "source": "https://gostanford.com/sports/football/schedule"},
+    {"year": 2026, "event": "Stanford @ Notre Dame", "date": "2026-10-10", "weekday": "Saturday", "status": "VERIFIED", "source": "https://gostanford.com/sports/football/schedule"},
+    {"year": 2026, "event": "Stanford vs Elon", "date": "2026-10-17", "weekday": "Saturday", "status": "VERIFIED", "source": "https://gostanford.com/sports/football/schedule"},
+    {"year": 2026, "event": "Stanford vs NC State", "date": "2026-10-23", "weekday": "Friday", "status": "VERIFIED", "source": "https://gostanford.com/sports/football/schedule"},
+    {"year": 2026, "event": "Stanford @ Louisville", "date": "2026-10-31", "weekday": "Saturday", "status": "VERIFIED", "source": "https://gostanford.com/sports/football/schedule"},
+    {"year": 2026, "event": "Stanford @ Virginia Tech", "date": "2026-11-14", "weekday": "Saturday", "status": "VERIFIED", "source": "https://gostanford.com/sports/football/schedule"},
+    {"year": 2026, "event": "129th Big Game Stanford @ Cal", "date": "2026-11-21", "weekday": "Saturday", "status": "VERIFIED", "source": "https://gostanford.com/news/2026/11/09/kickoff-time-revealed-for-129th-big-game"},
+    {"year": 2026, "event": "Stanford vs SMU (finale)", "date": "2026-11-28", "weekday": "Saturday", "status": "VERIFIED", "source": "https://gostanford.com/sports/football/schedule"},
+    {"year": 2026, "event": "Cal vs UCLA", "date": "2026-09-05", "weekday": "Saturday", "status": "VERIFIED", "source": "https://calbears.com/sports/football/schedule/2026"},
+    {"year": 2026, "event": "Cal @ Syracuse", "date": "2026-09-12", "weekday": "Saturday", "status": "VERIFIED", "source": "https://calbears.com/sports/football/schedule/2026"},
+    {"year": 2026, "event": "Cal vs Wagner", "date": "2026-09-19", "weekday": "Saturday", "status": "VERIFIED", "source": "https://calbears.com/sports/football/schedule/2026"},
+    {"year": 2026, "event": "Cal vs Clemson", "date": "2026-09-25", "weekday": "Friday", "status": "VERIFIED", "source": "https://calbears.com/sports/football/schedule/2026"},
+    {"year": 2026, "event": "Cal @ UNLV", "date": "2026-10-03", "weekday": "Saturday", "status": "VERIFIED", "source": "https://calbears.com/sports/football/schedule/2026"},
+    {"year": 2026, "event": "Cal vs Virginia Tech", "date": "2026-10-10", "weekday": "Saturday", "status": "VERIFIED", "source": "https://calbears.com/sports/football/schedule/2026"},
+    {"year": 2026, "event": "Cal vs Wake Forest", "date": "2026-10-17", "weekday": "Saturday", "status": "VERIFIED", "source": "https://calbears.com/sports/football/schedule/2026"},
+    {"year": 2026, "event": "Cal @ SMU", "date": "2026-10-24", "weekday": "Saturday", "status": "VERIFIED", "source": "https://calbears.com/sports/football/schedule/2026"},
+    {"year": 2026, "event": "Cal @ NC State", "date": "2026-10-31", "weekday": "Saturday", "status": "VERIFIED", "source": "https://calbears.com/sports/football/schedule/2026"},
+    {"year": 2026, "event": "Cal @ Virginia", "date": "2026-11-14", "weekday": "Saturday", "status": "VERIFIED", "source": "https://calbears.com/sports/football/schedule/2026"},
+    {"year": 2026, "event": "Cal vs Stanford (Big Game)", "date": "2026-11-21", "weekday": "Saturday", "status": "VERIFIED", "source": "https://calbears.com/sports/football/schedule/2026"},
+    {"year": 2026, "event": "Cal vs Pittsburgh (finale)", "date": "2026-11-28", "weekday": "Saturday", "status": "VERIFIED", "source": "https://calbears.com/sports/football/schedule/2026"},
+    {"year": 2027, "event": "Stanford + Cal seasons (ESTIMATED)", "date": "2027-08-28 to 2027-12-04", "status": "ESTIMATED", "source": "No official 2027 NCAAF schedules released as of 2026-11-25; estimated from 2026 pattern (late Aug–early Dec)"}
+  ],
+  "westwood_one": [
+    {"year": 2026, "event": "NFL Kickoff NE @ SEA (Westwood One)", "date": "2026-09-09", "weekday": "Wednesday", "status": "VERIFIED", "source": "https://www.westwoodonesports.com/nfl-schedule/"},
+    {"year": 2026, "event": "Thanksgiving Tripleheader (Westwood One)", "date": "2026-11-26", "weekday": "Thursday", "status": "VERIFIED", "source": "https://www.westwoodonesports.com/nfl-schedule/"},
+    {"year": 2026, "event": "Christmas Tripleheader (Westwood One)", "date": "2026-12-25", "weekday": "Friday", "status": "VERIFIED", "source": "https://www.westwoodonesports.com/nfl-schedule/"},
+    {"year": 2026, "event": "Weekly TNF/SNF/MNF national radio (Westwood One)", "date": "2026-09-09 to 2027-02-14", "status": "VERIFIED", "source": "https://www.westwoodonesports.com/nfl-schedule/"}
+  ],
+  "radio_stations": [
+    {"station": "KNBR 680 AM / 104.5 FM", "role": "Giants flagship + 49ers/Westwood One affiliate (SF)", "source": "https://www.knbr.com/"},
+    {"station": "KSFO 810 AM", "role": "Cal Golden Bears radio (per Cal schedule)", "source": "https://calbears.com/sports/football/schedule/2026"},
+    {"station": "Westwood One Sports network", "role": "National NFL radio (TNF/SNF/MNF, playoffs, Super Bowl)", "source": "https://www.westwoodonesports.com/nfl-schedule/"}
+  ],
+  "durations": [
+    {"sport": "MLB", "avg_minutes": 158, "note": "2h38m avg 2025 (MLB pace-of-play report)", "source": "https://www.lines.com/guides/how-long-is-baseball-game/1523"},
+    {"sport": "NFL/NCAAF", "avg_minutes": 192, "note": "3h12m avg incl. halftime/commercials", "source": "https://huffsports.com/football/how-long-is-an-nfl-game/"}
+  ]
+}
