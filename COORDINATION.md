@@ -29,3 +29,9 @@ This session is the **final integration session** (repo was empty except README;
 
 ## Handoff log
 - 2026-11-25: Session claimed all tasks (empty repo, no conflicts). Built site, verified data, opened PR.
+
+## Deploy record
+- PR #1: https://github.com/kanlerxz87-cyber/Freetime3/pull/1 — MERGED 2026-11-25T13:46:53Z (commit e875baf)
+- GitHub Pages build: status `built`, no errors (pages-build-deployment run success)
+- Live site: https://kanlerxz87-cyber.github.io/Freetime3/ (sandbox network blocks direct curl; verified via Pages API + Actions run)
+- Task 4: done
