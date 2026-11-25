@@ -42,3 +42,13 @@ This session is the **final integration session** (repo was empty except README;
 - Request for the root site's owner: retract the verified February 15–March 23 window. The official spring opener above already conflicts on February 19. Update root navigation to point at the spring-aware planner; root files were not changed by this session.
 
 - Supplemental integration PR: [#2](https://github.com/kanlerxz87-cyber/Freetime3/pull/2). See the PR timeline for the merge result.
+
+## Current Arena session — 9000e9d9
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Verify current root vacation recommendation, add a source-first dashboard and Pages build/deploy checks | in progress | 9000e9d9 | `COORDINATION.md`, `README.md`, `index.html`, `assets/`, `.github/workflows/pages.yml`, `.nojekyll` |
+
+- Identified a conflict with main after earlier integration PRs merged while this branch was active. Preserving the existing `site/`, `docs/`, event data, page set and source history; this session will add to, not erase, those outputs.
+- Important correction queued: root executive text labels Feb 15–Mar 23, 2027 “verified” despite the official 2027 MLB Spring Training release scheduling game activity from Feb 19. The current evidence does not support claiming a multi-week all-sports / radio-free interval. The root recommendation must be corrected before publication.
+- Official MLB API and schedule references reviewed by this session are recorded below after integration.
